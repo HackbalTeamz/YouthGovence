@@ -85,7 +85,89 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\elegant-icons.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\magnific-popup.css" />
+    <Content Include="Content\nice-select.css" />
+    <Content Include="Content\owl.carousel.min.css" />
+    <Content Include="Content\owl.video.play.html" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\slicknav.min.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="font\ElegantIcons.svg" />
+    <Content Include="font\fontawesome-webfont3e6e.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\about-bread.jpg" />
+    <Content Include="Images\about-us.jpg" />
+    <Content Include="Images\author-pic.png" />
+    <Content Include="Images\blog-single-1.jpg" />
+    <Content Include="Images\blog-single-2.jpg" />
+    <Content Include="Images\blog-single-3.jpg" />
+    <Content Include="Images\blog-single-4.jpg" />
+    <Content Include="Images\blog-single-hero.jpg" />
+    <Content Include="Images\blog\blog-1.jpg" />
+    <Content Include="Images\blog\blog-2.jpg" />
+    <Content Include="Images\blog\blog-3.jpg" />
+    <Content Include="Images\blog\blog-4.jpg" />
+    <Content Include="Images\blog\blog-5.jpg" />
+    <Content Include="Images\blog\blog-page-1.jpg" />
+    <Content Include="Images\blog\blog-page-2.jpg" />
+    <Content Include="Images\blog\blog-page-3.jpg" />
+    <Content Include="Images\blog\blog-page-4.jpg" />
+    <Content Include="Images\blog\blog-page-5.jpg" />
+    <Content Include="Images\br-recent-1.jpg" />
+    <Content Include="Images\br-recent-2.jpg" />
+    <Content Include="Images\br-recent-3.jpg" />
+    <Content Include="Images\br-recent-4.jpg" />
+    <Content Include="Images\classes-title-bg.jpg" />
+    <Content Include="Images\classes\class-1.jpg" />
+    <Content Include="Images\classes\class-2.jpg" />
+    <Content Include="Images\classes\class-3.jpg" />
+    <Content Include="Images\classes\class-4.jpg" />
+    <Content Include="Images\feature\feature-1.jpg" />
+    <Content Include="Images\feature\feature-2.jpg" />
+    <Content Include="Images\feature\feature-3.jpg" />
+    <Content Include="Images\gallery\gallery-1.jpg" />
+    <Content Include="Images\gallery\gallery-2.jpg" />
+    <Content Include="Images\gallery\gallery-3.jpg" />
+    <Content Include="Images\gallery\gallery-4.jpg" />
+    <Content Include="Images\gallery\gallery-5.jpg" />
+    <Content Include="Images\gallery\gallery-6.jpg" />
+    <Content Include="Images\gallery\gallery-7.jpg" />
+    <Content Include="Images\gallery\gallery-8.jpg" />
+    <Content Include="Images\gallery\gallery-9.jpg" />
+    <Content Include="Images\hero-slider\hero-1.jpg" />
+    <Content Include="Images\hero-slider\hero-2.jpg" />
+    <Content Include="Images\hero-slider\hero-3.jpg" />
+    <Content Include="Images\home-about.jpg" />
+    <Content Include="Images\icons\chose-icon-1.png" />
+    <Content Include="Images\icons\chose-icon-2.png" />
+    <Content Include="Images\icons\chose-icon-3.png" />
+    <Content Include="Images\icons\chose-icon-4.png" />
+    <Content Include="Images\icons\chose-icon-5.png" />
+    <Content Include="Images\icons\chose-icon-6.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\price-bg.jpg" />
+    <Content Include="Images\recent-1.jpg" />
+    <Content Include="Images\recent-2.jpg" />
+    <Content Include="Images\recent-3.jpg" />
+    <Content Include="Images\sidebar-latest.jpg" />
+    <Content Include="Images\testimonial-bg.jpg" />
+    <Content Include="Images\trainer\trainer-1.jpg" />
+    <Content Include="Images\trainer\trainer-2.jpg" />
+    <Content Include="Images\trainer\trainer-3.jpg" />
+    <Content Include="Images\trainer\trainer-4.jpg" />
+    <Content Include="Images\video-bg.jpg" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery.magnific-popup.min.js" />
+    <Content Include="Scripts\jquery.nice-select.min.js" />
+    <Content Include="Scripts\jquery.slicknav.js" />
+    <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\masonry.pkgd.min.js" />
+    <Content Include="Scripts\mixitup.min.js" />
+    <Content Include="Scripts\owl.carousel.min.js" />
     <Content Include="Template\about-us.html" />
     <Content Include="Template\blog-single.html" />
     <Content Include="Template\blog.html" />
@@ -187,6 +269,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
+    <Content Include="font\ElegantIcons.eot" />
+    <Content Include="font\ElegantIcons.ttf" />
+    <Content Include="font\ElegantIcons.woff" />
+    <Content Include="font\ElegantIconsd41d.eot" />
+    <Content Include="font\fontawesome-webfont3e6e.eot" />
+    <Content Include="font\fontawesome-webfont3e6e.ttf" />
+    <Content Include="font\fontawesome-webfont3e6e.woff" />
+    <Content Include="font\fontawesome-webfont3e6e.woff2" />
+    <Content Include="font\fontawesome-webfontd41d.eot" />
     <None Include="packages.config" />
     <Content Include="Template\fonts\ElegantIcons.eot" />
     <Content Include="Template\fonts\ElegantIcons.ttf" />
@@ -197,6 +288,10 @@
     <Content Include="Template\fonts\fontawesome-webfont3e6e.woff" />
     <Content Include="Template\fonts\fontawesome-webfont3e6e.woff2" />
     <Content Include="Template\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_HomeLayout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -207,7 +302,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Home\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
