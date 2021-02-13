@@ -261,7 +261,41 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AboutUsController.cs" />
+    <Compile Include="Controllers\AccountsController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CollegeResultsController.cs" />
+    <Compile Include="Controllers\CollegesController.cs" />
+    <Compile Include="Controllers\CoursesController.cs" />
+    <Compile Include="Controllers\CredentialsController.cs" />
+    <Compile Include="Controllers\DepartmentsController.cs" />
+    <Compile Include="Controllers\EventRegistrationController.cs" />
+    <Compile Include="Controllers\EventWiseResultsController.cs" />
+    <Compile Include="Controllers\FirstPrizeTblsController.cs" />
+    <Compile Include="Controllers\GalleryController.cs" />
+    <Compile Include="Controllers\GeneralSettingsController.cs" />
+    <Compile Include="Controllers\GroupHeadParticipationsController.cs" />
+    <Compile Include="Controllers\GroupMemParticiapationsController.cs" />
+    <Compile Include="Controllers\GrpEventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImageGalleriesController.cs" />
+    <Compile Include="Controllers\IndivijualResultsController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\ParticipantFeMaleResultsController.cs" />
+    <Compile Include="Controllers\ParticipantMaleResultsController.cs" />
+    <Compile Include="Controllers\PrgShedulesController.cs" />
+    <Compile Include="Controllers\RegistrationController.cs" />
+    <Compile Include="Controllers\ResultController.cs" />
+    <Compile Include="Controllers\ResultsController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
+    <Compile Include="Controllers\ScheduleController.cs" />
+    <Compile Include="Controllers\SecondPrizeTblsController.cs" />
+    <Compile Include="Controllers\SingleEventsController.cs" />
+    <Compile Include="Controllers\SingleParticipationsController.cs" />
+    <Compile Include="Controllers\StudentsController.cs" />
+    <Compile Include="Controllers\SuperAdminController.cs" />
+    <Compile Include="Controllers\ThirdPrizeTblsController.cs" />
+    <Compile Include="Controllers\VolunteersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

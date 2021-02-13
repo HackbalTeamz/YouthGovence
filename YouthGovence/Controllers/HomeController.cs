@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using YouthFestival.Models;
 
-namespace YouthGovence.Controllers
+namespace YouthFestival.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
-        // GET: Home
+        // GET: Home //test///test
         public ActionResult Index()
         {
-            return View();
+            HomePageModel hompgm = new HomePageModel();
+            hompgm.newslist = db.News.OrderByDescending(x=>x.UpdatedOn).ToList();
+            hompgm.imglist = db.ImageGalleries.OrderByDescending(x=>x.UpdatedOn).Take(5).ToList();
+            return View(hompgm);
         }
+        
     }
 }
