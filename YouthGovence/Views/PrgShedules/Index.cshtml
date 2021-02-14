@@ -1,0 +1,103 @@
+﻿@model IEnumerable<YouthGovence.Models.PrgShedule>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_VolunteerLayout.cshtml";
+}
+
+@section Styles {
+    <!-- Custom styles for this page -->
+    <link href="~/Content/Admin/dataTables.bootstrap4.min.css" rel="stylesheet" />
+}
+
+<p>
+    <a href="/PrgShedules/Create"><button class="btn btn-primary btn-user btn-block">Create New Shedule</button></a>
+</p>
+
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EventName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EventCode)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SheduleDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.StartingTime)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EndingTime)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Stage)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CollegeName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CoOrdinatorName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CoOrdinatorNumber)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EventName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EventCode)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SheduleDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StartingTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EndingTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Stage)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CollegeName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CoOrdinatorName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CoOrdinatorNumber)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.SheduleID }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.SheduleID })
+                        </td>
+                    </tr>
+                }
+                
+
+            </tbody>
+        </table>
+    </div>
+</div>
+@section scripts
+{
+    <!-- Page level plugins -->
+    <script src="~/Scripts/Admin/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/Admin/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="~/Scripts/Admin/datatables-demo.js"></script>
+}

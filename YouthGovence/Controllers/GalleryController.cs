@@ -5,7 +5,7 @@ using System.Data.Entity;
 using System.Web;
 using System.Web.Mvc;
 
-namespace YouthFestival.Controllers
+namespace YouthGovence.Controllers
 {
     public class GalleryController : BaseController
     {

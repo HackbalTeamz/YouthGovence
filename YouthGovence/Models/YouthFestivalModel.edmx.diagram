@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5590cc5e0675402bbabadc9a40cb083e" Name="Diagram1">
+        <EntityTypeShape EntityType="KeralaYouthFestivalModel.College" Width="1.5" PointX="8.25" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeralaYouthFestivalModel.CollegeResult" Width="1.5" PointX="8.25" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeralaYouthFestivalModel.Course" Width="1.5" PointX="0.75" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeralaYouthFestivalModel.Credential" Width="1.5" PointX="0.75" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeralaYouthFestivalModel.Department" Width="1.5" PointX="1.5" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeralaYouthFestivalModel.EventWiseResult" Width="1.5" PointX="8.25" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeralaYouthFestivalModel.FirstPrizeTbl" Width="1.5" PointX="10.5" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeralaYouthFestivalModel.GeneralSetting" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeralaYouthFestivalModel.GroupHeadParticipation" Width="1.5" PointX="10.5" PointY="23.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeralaYouthFestivalModel.GroupMemParticiapation" Width="1.5" PointX="15.75" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeralaYouthFestivalModel.GrpEvent" Width="1.5" PointX="8.25" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeralaYouthFestivalModel.ImageGallery" Width="1.5" PointX="8.25" PointY="25.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeralaYouthFestivalModel.IndivijualResult" Width="1.5" PointX="8.25" PointY="28.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeralaYouthFestivalModel.News" Width="1.5" PointX="8.25" PointY="32.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeralaYouthFestivalModel.ParticipantFeMaleResult" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeralaYouthFestivalModel.ParticipantMaleResult" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeralaYouthFestivalModel.PrgShedule" Width="1.5" PointX="8.25" PointY="35.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeralaYouthFestivalModel.Result" Width="1.5" PointX="18.5" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeralaYouthFestivalModel.Role" Width="1.5" PointX="3.75" PointY="29.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeralaYouthFestivalModel.SecondPrizeTbl" Width="1.5" PointX="13.5" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeralaYouthFestivalModel.SingleEvent" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeralaYouthFestivalModel.SingleParticipation" Width="1.5" PointX="5.25" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeralaYouthFestivalModel.Student" Width="1.5" PointX="3" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeralaYouthFestivalModel.StudentChestNo" Width="1.5" PointX="13.25" PointY="25.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeralaYouthFestivalModel.SuperAdmin" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeralaYouthFestivalModel.ThirdPrizeTbl" Width="1.5" PointX="13.5" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KeralaYouthFestivalModel.Volunteer" Width="1.5" PointX="6" PointY="21.25" IsExpanded="true" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_College_Volunteer" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_Student_College" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_CollegeResult_Volunteer" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_CollegeResult_Volunteer1" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_Course_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_Student_Course" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_Student_Credential" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_Volunteer_Credential" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_Student_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_EventWiseResult_Volunteer" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_EventWiseResult_Volunteer1" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_FirstPrizeTbl_EventWiseResult" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_SecondPrizeTbl_EventWiseResult" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_ThirdPrizeTbl_EventWiseResult" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_FirstPrizeTbl_Volunteer" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_FirstPrizeTbl_Volunteer1" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_GroupHeadPart_GrpEvent" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_GroupHeadPart_Student" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_GroupMemParticiapation_GrpEvent" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_GroupMemParticiapation_Student" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_GrpEvent_Volunteer" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_ImageGallery_Volunteer" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_IndivijualResult_Volunteer" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_IndivijualResult_Volunteer1" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_News_Volunteer" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_PrgShedule_Volunteer" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_PrgShedule_Volunteer1" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_Result_Item" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_Result_StudentChestNo" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_Result_Volunteer" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_Result_Volunteer1" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_Volunteer_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_SecondPrizeTbl_Volunteer" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_SecondPrizeTbl_Volunteer1" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_StudentParticipation_Item" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_StudentChestNo_StudentParticipation" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_StudentParticipation_Student" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_StudentChestNo_Volunteer" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_ThirdPrizeTbl_Volunteer" ManuallyRouted="false" />
+        <AssociationConnector Association="KeralaYouthFestivalModel.FK_ThirdPrizeTbl_Volunteer1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

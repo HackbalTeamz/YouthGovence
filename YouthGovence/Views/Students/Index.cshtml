@@ -1,0 +1,160 @@
+﻿@model IEnumerable<YouthGovence.Models.Student>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_SuperAdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RegID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sex)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClgAdmistnNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProPic)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsPhoneVerify)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneVerificationCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsCollegeApproved)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsEligibilityApproved)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsChestNoProvided)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CollegeApprovedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EligibilityApprovedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChestNoProvidedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnteredOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdatedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Course.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Credential.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Department.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.College.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sex)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClgAdmistnNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfBirth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProPic)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsPhoneVerify)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneVerificationCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsCollegeApproved)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsEligibilityApproved)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsChestNoProvided)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CollegeApprovedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EligibilityApprovedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChestNoProvidedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnteredOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdatedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Course.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Credential.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Department.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.College.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.StudID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.StudID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.StudID })
+        </td>
+    </tr>
+}
+
+</table>

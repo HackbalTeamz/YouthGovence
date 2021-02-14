@@ -1,0 +1,74 @@
+﻿@model IEnumerable<YouthGovence.Models.News>
+
+
+@{
+    ViewBag.Title = "News";
+    Layout = "~/Views/Shared/_VolunteerLayout.cshtml";
+}
+
+@section Styles {
+    <!-- Custom styles for this page -->
+    <link href="~/Content/Admin/dataTables.bootstrap4.min.css" rel="stylesheet" />
+}
+
+<p>
+    <a href="/News/Create"><button class="btn btn-primary btn-user btn-block">Create New News</button></a>
+</p>
+
+
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NewsTitle)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NewsInfo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NewsLink)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Volunteer.Name)
+                    </th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NewsTitle)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NewsInfo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NewsLink)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Volunteer.Name)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.NewsID }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.NewsID })
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+@section scripts
+{
+    <!-- Page level plugins -->
+    <script src="~/Scripts/Admin/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/Admin/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="~/Scripts/Admin/datatables-demo.js"></script>
+}

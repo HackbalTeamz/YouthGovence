@@ -1,0 +1,75 @@
+﻿@model IEnumerable<YouthGovence.Models.GroupHeadParticipation>
+
+@{
+    ViewBag.Title = "Group Event";
+    Layout = "~/Views/Shared/_VolunteerLayout.cshtml";
+}
+
+@section Styles {
+    <!-- Custom styles for this page -->
+    <link href="~/Content/Admin/dataTables.bootstrap4.min.css" rel="stylesheet" />
+}
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.EnteredOn)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UpdatedOn)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GrpEvent.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Student.RegID)
+                </th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EnteredOn)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UpdatedOn)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.GrpEvent.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Student.RegID)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.GrpPartID }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.GrpPartID }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.GrpPartID })
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+@section scripts
+{
+    <!-- Page level plugins -->
+    <script src="~/Scripts/Admin/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/Admin/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="~/Scripts/Admin/datatables-demo.js"></script>
+}

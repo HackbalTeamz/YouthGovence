@@ -1,0 +1,231 @@
+﻿@model YouthGovence.EventSheduleVM
+@{
+    ViewBag.Title = "Schedule";
+}
+
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-section set-bg spad" data-setbg="/Image/hero-slider/hero-1.jpg">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb-text">
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb End -->
+<!-- Class Time Section Begin -->
+<section class="classtime-section class-time-table spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="section-title">
+                    <h2>Schedule Table</h2>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="row">
+            <div class="col-lg-12">
+                <div class="timetable-controls">
+                    <ul>
+                        <li class="active" data-tsfilter="all">all class</li>
+                        <li data-tsfilter="crossfit">crossfit</li>
+                        <li data-tsfilter="lunge">lunge ball</li>
+                        <li data-tsfilter="ppsr">ppsr</li>
+                        <li data-tsfilter="walls">walls</li>
+                        <li data-tsfilter="candy">candy</li>
+                    </ul>
+                </div>
+            </div>
+        </div> -->
+        <div class="row">
+            <div class="classtime-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="8">02 - Mar<br />Monday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{ int i = 0;}
+                        @foreach (var item in Model.date1)
+                        {
+                            if (i == 0)
+                            {
+                                @:<tr>
+                                }
+                                <td class="workout-time">@item.StartingTime</td>
+                                <td class="hover-bg ts-item">
+                                    <span>@item.StartingTime - @item.EndingTime</span>
+                                    <h6>@item.EventName</h6>
+                                    <span>@item.Stage</span>
+                                    <span>@item.CollegeName</span>
+                                </td>
+                                if (i == 2)
+                                {
+                                    i = -1;
+                                @:</tr>
+                            }
+                            i++;
+                        }
+                    </tbody>
+                </table>
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="8">03 - Mar<br />Tuesday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{ i = 0;}
+                        @foreach (var item in Model.date2)
+                        {
+                            if (i == 3)
+                            {
+                                @:<tr>
+                                }
+                                <td class="workout-time">@item.StartingTime</td>
+                                <td class="hover-bg ts-item">
+                                    <span>@item.StartingTime - @item.EndingTime</span>
+                                    <h6>@item.EventName</h6>
+                                    <span>@item.Stage</span>
+                                    <span>@item.CollegeName</span>
+                                </td>
+                                if (i == 3)
+                                {
+                                    i = -1;
+                                @:</tr>
+                            }
+                            i++;
+                        }
+                    </tbody>
+                </table>
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="8">04 - Mar<br />Wednesday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{ i = 0;}
+                        @foreach (var item in Model.date3)
+                        {
+                            if (i == 3)
+                            {
+                                @:<tr>
+                                }
+                                <td class="workout-time">@item.StartingTime</td>
+                                <td class="hover-bg ts-item">
+                                    <span>@item.StartingTime - @item.EndingTime</span>
+                                    <h6>@item.EventName</h6>
+                                    <span>@item.Stage</span>
+                                    <span>@item.CollegeName</span>
+                                </td>
+                                if (i == 3)
+                                {
+                                    i = -1;
+                                @:</tr>
+                            }
+                            i++;
+                        }
+                    </tbody>
+                </table>
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="8">05 - Mar<br />Thursday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{ i = 0;}
+                        @foreach (var item in Model.date4)
+                        {
+                            if (i == 3)
+                            {
+                                @:<tr>
+                                }
+                                <td class="workout-time">@item.StartingTime</td>
+                                <td class="hover-bg ts-item">
+                                    <span>@item.StartingTime - @item.EndingTime</span>
+                                    <h6>@item.EventName</h6>
+                                    <span>@item.Stage</span>
+                                    <span>@item.CollegeName</span>
+                                </td>
+                                if (i == 3)
+                                {
+                                    i = -1;
+                                @:</tr>
+                            }
+                            i++;
+                        }
+                    </tbody>
+                </table>
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="8">06 - Mar<br />Friday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{ i = 0;}
+                        @foreach (var item in Model.date5)
+                        {
+                            if (i == 3)
+                            {
+                                @:<tr>
+                                }
+                                <td class="workout-time">@item.StartingTime</td>
+                                <td class="hover-bg ts-item">
+                                    <span>@item.StartingTime - @item.EndingTime</span>
+                                    <h6>@item.EventName</h6>
+                                    <span>@item.Stage</span>
+                                    <span>@item.CollegeName</span>
+                                </td>
+                                if (i == 3)
+                                {
+                                    i = -1;
+                                @:</tr>
+                            }
+                            i++;
+                        }
+                    </tbody>
+                </table>
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="8">07 - Mar<br />Saturday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{ i = 0;}
+                        @foreach (var item in Model.date6)
+                        {
+                            if (i == 3)
+                            {
+                                @:<tr>
+                                }
+                                <td class="workout-time">@item.StartingTime</td>
+                                <td class="hover-bg ts-item">
+                                    <span>@item.StartingTime - @item.EndingTime</span>
+                                    <h6>@item.EventName</h6>
+                                    <span>@item.Stage</span>
+                                    <span>@item.CollegeName</span>
+                                </td>
+                                if (i == 3)
+                                {
+                                    i = -1;
+                                @:</tr>
+                            }
+                            i++;
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Class Time Section End -->

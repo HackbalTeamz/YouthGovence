@@ -1,0 +1,62 @@
+﻿<h1>Single Event</h1>
+<table border="1">
+    <thead>
+        <tr>
+            <td>
+                SL No
+            </td>
+            <td>
+                Event Name
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int i = 1;
+        }
+        @foreach (var item in Model.singlevtlist)
+        {
+            <tr>
+                <td>
+                    @i
+                </td>
+                <td>
+                    @item.EventName
+            </td>
+        </tr>
+        i++;
+    }
+    </tbody>
+</table>
+
+<h1>Group Event</h1>
+<table border="1">
+    <thead>
+        <tr>
+            <td>
+                SL No
+            </td>
+            <td>
+                Event Name
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int j = 1;
+        }
+        @foreach (var item in Model.grpevtlist)
+        {
+            <tr>
+                <td>
+                    @j
+                </td>
+                <td>
+                    @item.EventName
+                </td>
+            </tr>
+            j++;
+        }
+    </tbody>
+</table>
+

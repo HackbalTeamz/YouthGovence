@@ -1,0 +1,59 @@
+﻿@model IEnumerable<YouthGovence.Models.GroupMemParticiapation>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EnteredOn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UpdatedOn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GroupHeadParticipation.GrpPartID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student.RegID)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnteredOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdatedOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GroupHeadParticipation.GrpPartID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Student.RegID)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.GrpMemPartID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.GrpMemPartID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.GrpMemPartID })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

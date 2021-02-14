@@ -1,0 +1,118 @@
+﻿@model YouthGovence.LoginModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DRISHTI'20</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    @*<link rel="icon" type="image/png" href="images/icons/favicon.ico" />*@
+    <link href="~/Content/Login/icon-font.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    @*<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">*@
+    <link href="~/Content/Login/bootstrap.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    @*<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">*@
+    <link href="~/fonts/Login/font-awesome.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    @*<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">*@
+    <link href="~/fonts/Login/icon-font.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    @*<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">*@
+    <link href="~/Content/Login/animate.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    @*<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">*@
+    <!--===============================================================================================-->
+    @*<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">*@
+    <link href="~/Content/Login/select2.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    @*<link rel="stylesheet" type="text/css" href="css/util.css">*@
+    <link href="~/Content/Login/util.css" rel="stylesheet" />
+    @*<link rel="stylesheet" type="text/css" href="css/main.css">*@
+    <link href="~/Content/Login/main.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+</head>
+<body>
+
+    <div class="limiter">
+        <div class="container-login100" style="background-image: url('../Image/Login/img-01.jpg');">
+            
+            <div class="wrap-login100 p-t-190 p-b-30">
+                    <span class="login100-form-title p-t-20 p-b-45">
+                        USER LOGIN
+                        @if (ViewBag.Error != null)
+                        {
+                            <h5 class="h4 text-gray-900 mb-4">@ViewBag.Error</h5>
+                        }
+                    </span>
+                    @using (Html.BeginForm("Login", "SuperAdmin", FormMethod.Post, new { @class = "login100-form validate-form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="wrap-input100 validate-input m-b-10" data-validate="Username is required">
+                            <input class="input100" type="text" name="Username" placeholder="Username">
+                            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <i class="fa fa-user"></i>
+                            </span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input m-b-10" data-validate="Password is required">
+                            <input class="input100" type="password" name="Password" placeholder="Password">
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <i class="fa fa-lock"></i>
+                            </span>
+                        </div>
+
+                        <div class="container-login100-form-btn p-t-10">
+                            <button class="login100-form-btn">
+                                <input type="submit" value="Login" class="login100-form-btn" />
+                            </button>
+                        </div>
+                    }
+
+                    <div class="text-center w-full p-t-25 p-b-230">
+                        <a href="#" class="txt1">
+                            Forgot Username / Password?
+                        </a>
+                    </div>
+
+                    <div class="text-center w-full">
+                        <a class="txt1" href="#">
+                            Create new account
+                            <i class="fa fa-long-arrow-right"></i>
+                        </a>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!--===============================================================================================-->
+    @*<script src="vendor/jquery/jquery-3.2.1.min.js"></script>*@
+    <script src="~/Scripts/Login/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    @*<script src="vendor/bootstrap/js/popper.js"></script>*@
+    <script src="~/Scripts/Login/popper.js"></script>
+    @*<script src="vendor/bootstrap/js/bootstrap.min.js"></script>*@
+    <script src="~/Scripts/Login/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    @*<script src="vendor/select2/select2.min.js"></script>*@
+    <script src="~/Scripts/Login/select2.min.js"></script>
+    <!--===============================================================================================-->
+    @*<script src="js/main.js"></script>*@
+    <script src="~/Scripts/Login/main.js"></script>
+
+</body>
+</html>
+
+

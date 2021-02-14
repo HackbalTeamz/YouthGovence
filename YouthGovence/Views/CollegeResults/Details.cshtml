@@ -1,0 +1,67 @@
+﻿@model YouthGovence.Models.CollegeResult
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_VolunteerLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CollegeResult</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CollegeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CollegeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CollegePoint)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CollegePoint)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnteredOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnteredOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Volunteer.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Volunteer.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Volunteer1.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Volunteer1.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ColgID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

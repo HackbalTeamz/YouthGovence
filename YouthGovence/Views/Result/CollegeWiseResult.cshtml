@@ -1,0 +1,78 @@
+﻿@model YouthGovence.ResultVM
+@{
+    ViewBag.Title = "Result";
+}
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-section set-bg spad" data-setbg="/Image/hero-slider/hero-1.jpg">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb-text">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb End -->
+<!-- RESULT SESSION ENDS -->
+<section class="classtime-section class-time-table spad">
+    <div class="col-lg-10 offset-lg-1">
+        <div class="container">
+            <!-- college wise results -->
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="section-title">
+                        <h2>College wise results</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="classtime-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>no.</th>
+                                    <th>college name</th>
+                                    <th>points</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{ int colcou = 1;}
+                                @foreach (var item in Model.collegeresult)
+                                {
+                                    <tr>
+                                        <td class="hover-bg ts-item">
+                                            <span>@colcou</span>
+                                        </td>
+                                        <td class="hover-bg ts-item">
+                                            <h6>@item.CollegeName</h6>
+                                        </td>
+                                        <td class="hover-bg ts-item">
+                                            <span>@item.CollegePoint</span>
+                                        </td>
+                                    </tr>
+                                    colcou++;
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- college wise results ends -->
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="section-title">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- RESULT SESSION ENDS -->

@@ -1,0 +1,12 @@
+﻿@model YouthGovence.StudentDashboard
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_VolunteerLayout.cshtml";
+}
+
+
+@if (Session["Role"].ToString() == "5")
+{
+    @Html.Partial("_StudentDashboard");
+}
+

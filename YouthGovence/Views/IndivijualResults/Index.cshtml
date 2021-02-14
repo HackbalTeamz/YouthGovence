@@ -1,0 +1,70 @@
+﻿@model IEnumerable<YouthGovence.Models.IndivijualResult>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_VolunteerLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StudName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudPoint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudCollege)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnteredOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdatedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Volunteer.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Volunteer1.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudPoint)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudCollege)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnteredOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdatedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Volunteer.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Volunteer1.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IndvID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IndvID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IndvID })
+        </td>
+    </tr>
+}
+
+</table>

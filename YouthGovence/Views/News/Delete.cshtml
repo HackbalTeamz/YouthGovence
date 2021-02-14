@@ -1,0 +1,79 @@
+﻿@model YouthGovence.Models.News
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_VolunteerLayout.cshtml";
+}
+
+<div class="card shadow mb-4">
+    <!-- Card Header - Dropdown -->
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-white">@Html.ActionLink("News List", "Index")  ||  @Html.ActionLink("News Create", "Create")</h6>
+    </div>
+    <!-- Card Body -->
+    <div class="card-body">
+
+        <h3>Are you sure you want to delete this?</h3>
+        <div>
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.NewsTitle)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.NewsTitle)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.NewsInfo)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.NewsInfo)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.NewsLink)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.NewsLink)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.EnteredOn)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.EnteredOn)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.UpdatedOn)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.UpdatedOn)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Volunteer.Name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Volunteer.Name)
+                </dd>
+
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="offset-md-2 col-md-2">
+                    <input type="submit" value="Delete" class="btn btn-primary btn-user btn-block" />
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+﻿@model IEnumerable<YouthGovence.Models.ParticipantFeMaleResult>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_VolunteerLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StudName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CollegeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudPoint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnteredOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdatedOn)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CollegeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudPoint)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnteredOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdatedOn)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PartFeMaleResultID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PartFeMaleResultID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PartFeMaleResultID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,123 @@
+﻿@model YouthGovence.Models.PrgShedule
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_VolunteerLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PrgShedule</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EventName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EventCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SheduleDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SheduleDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartingTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartingTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndingTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndingTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Stage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Stage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CollegeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CollegeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CoOrdinatorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CoOrdinatorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CoOrdinatorNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CoOrdinatorNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnteredOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnteredOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Volunteer.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Volunteer.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Volunteer1.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Volunteer1.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SheduleID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

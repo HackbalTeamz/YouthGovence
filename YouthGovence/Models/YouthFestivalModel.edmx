@@ -1,0 +1,2495 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="KeralaYouthFestivalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="College">
+          <Key>
+            <PropertyRef Name="ColID" />
+          </Key>
+          <Property Name="ColID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="EnteredBy" Type="bigint" />
+          <Property Name="EnteredOn" Type="datetime" />
+          <Property Name="UpdatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="CollegeResult">
+          <Key>
+            <PropertyRef Name="ColgID" />
+          </Key>
+          <Property Name="ColgID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CollegeName" Type="varchar" MaxLength="200" />
+          <Property Name="CollegePoint" Type="bigint" />
+          <Property Name="EnteredOn" Type="datetime" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="EnteredBy" Type="bigint" />
+          <Property Name="UpdatedBy" Type="bigint" />
+        </EntityType>
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="CouID" />
+          </Key>
+          <Property Name="CouID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DeptID" Type="bigint" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="EnteredBy" Type="bigint" />
+          <Property Name="EnteredOn" Type="datetime" />
+          <Property Name="UpdatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Credential">
+          <Key>
+            <PropertyRef Name="CredID" />
+          </Key>
+          <Property Name="CredID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="IsEmailVerify" Type="bit" />
+          <Property Name="EmailVerificationCode" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="PasswordResetCode" Type="varchar" MaxLength="50" />
+          <Property Name="LastLoginIP" Type="varchar" MaxLength="50" />
+          <Property Name="LastLoginOn" Type="datetime" />
+          <Property Name="EnteredOn" Type="datetime" />
+          <Property Name="UpdatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DeptID" />
+          </Key>
+          <Property Name="DeptID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="EnteredBy" Type="bigint" />
+          <Property Name="EnteredOn" Type="datetime" />
+          <Property Name="UpdatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="EventWiseResult">
+          <Key>
+            <PropertyRef Name="EvntID" />
+          </Key>
+          <Property Name="EvntID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EventName" Type="varchar" MaxLength="50" />
+          <Property Name="FStudChestNumber" Type="varchar" MaxLength="50" />
+          <Property Name="FStudName" Type="varchar" MaxLength="50" />
+          <Property Name="FStudCollege" Type="varchar" MaxLength="50" />
+          <Property Name="SStudChestNumber" Type="varchar" MaxLength="50" />
+          <Property Name="SStudName" Type="varchar" MaxLength="50" />
+          <Property Name="SStudCollege" Type="varchar" MaxLength="50" />
+          <Property Name="TStudChestNumber" Type="varchar" MaxLength="50" />
+          <Property Name="TStudName" Type="varchar" MaxLength="50" />
+          <Property Name="TStudCollege" Type="varchar" MaxLength="50" />
+          <Property Name="EnteredOn" Type="datetime" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="UpdatedBy" Type="bigint" />
+          <Property Name="EnteredBy" Type="bigint" />
+        </EntityType>
+        <EntityType Name="FirstPrizeTbl">
+          <Key>
+            <PropertyRef Name="FIrstPrizeID" />
+          </Key>
+          <Property Name="FIrstPrizeID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EventID" Type="bigint" />
+          <Property Name="StudName" Type="varchar" MaxLength="50" />
+          <Property Name="StudCollege" Type="varchar" MaxLength="200" />
+          <Property Name="EnteredOn" Type="datetime" />
+          <Property Name="EnteredBy" Type="bigint" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="UpdatedBy" Type="bigint" />
+        </EntityType>
+        <EntityType Name="GeneralSetting">
+          <Key>
+            <PropertyRef Name="GenSetID" />
+          </Key>
+          <Property Name="GenSetID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EnteredOn" Type="datetime" />
+          <Property Name="UpdatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="GroupHeadParticipation">
+          <Key>
+            <PropertyRef Name="GrpPartID" />
+          </Key>
+          <Property Name="GrpPartID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TeamHeadID" Type="bigint" />
+          <Property Name="GrpEvtID" Type="bigint" />
+          <Property Name="EnteredOn" Type="datetime" />
+          <Property Name="UpdatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="GroupMemParticiapation">
+          <Key>
+            <PropertyRef Name="GrpMemPartID" />
+          </Key>
+          <Property Name="GrpMemPartID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GrpPartID" Type="bigint" />
+          <Property Name="TeamMemID" Type="bigint" />
+          <Property Name="EnteredOn" Type="datetime" />
+          <Property Name="UpdatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="GrpEvent">
+          <Key>
+            <PropertyRef Name="GrpEvtID" />
+          </Key>
+          <Property Name="GrpEvtID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="GrpPartcCount" Type="int" />
+          <Property Name="EnteredBy" Type="bigint" />
+          <Property Name="EnteredOn" Type="datetime" />
+          <Property Name="UpdatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ImageGallery">
+          <Key>
+            <PropertyRef Name="ImGaID" />
+          </Key>
+          <Property Name="ImGaID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ImgURL" Type="varchar" MaxLength="50" />
+          <Property Name="ImgAlt" Type="varchar" MaxLength="50" />
+          <Property Name="UploadedBy" Type="bigint" />
+          <Property Name="EnteredOn" Type="datetime" />
+          <Property Name="UpdatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="IndivijualResult">
+          <Key>
+            <PropertyRef Name="IndvID" />
+          </Key>
+          <Property Name="IndvID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StudName" Type="varchar" MaxLength="50" />
+          <Property Name="StudPoint" Type="varchar" MaxLength="50" />
+          <Property Name="StudCollege" Type="varchar" MaxLength="50" />
+          <Property Name="EnteredOn" Type="datetime" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="EnteredBy" Type="bigint" />
+          <Property Name="UpdatedBy" Type="bigint" />
+        </EntityType>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="NewsID" />
+          </Key>
+          <Property Name="NewsID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NewsTitle" Type="varchar" MaxLength="200" />
+          <Property Name="NewsInfo" Type="varchar(max)" />
+          <Property Name="NewsLink" Type="varchar" MaxLength="200" />
+          <Property Name="UpdatedBy" Type="bigint" />
+          <Property Name="EnteredOn" Type="datetime" />
+          <Property Name="UpdatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ParticipantFeMaleResult">
+          <Key>
+            <PropertyRef Name="PartFeMaleResultID" />
+          </Key>
+          <Property Name="PartFeMaleResultID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StudName" Type="varchar" MaxLength="50" />
+          <Property Name="CollegeName" Type="varchar" MaxLength="200" />
+          <Property Name="StudPoint" Type="bigint" />
+          <Property Name="EnteredOn" Type="datetime" />
+          <Property Name="UpdatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ParticipantMaleResult">
+          <Key>
+            <PropertyRef Name="PartMaleResultID" />
+          </Key>
+          <Property Name="PartMaleResultID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StudName" Type="varchar" MaxLength="50" />
+          <Property Name="CollegeName" Type="varchar" MaxLength="200" />
+          <Property Name="StudPoint" Type="bigint" />
+          <Property Name="EnteredOn" Type="datetime" />
+          <Property Name="UpdatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="PrgShedule">
+          <Key>
+            <PropertyRef Name="SheduleID" />
+          </Key>
+          <Property Name="SheduleID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EventName" Type="varchar" MaxLength="50" />
+          <Property Name="EventCode" Type="varchar" MaxLength="50" />
+          <Property Name="SheduleDate" Type="date" />
+          <Property Name="StartingTime" Type="varchar" MaxLength="50" />
+          <Property Name="EndingTime" Type="varchar" MaxLength="50" />
+          <Property Name="Stage" Type="varchar" MaxLength="50" />
+          <Property Name="CollegeName" Type="varchar" MaxLength="50" />
+          <Property Name="CoOrdinatorName" Type="varchar" MaxLength="50" />
+          <Property Name="CoOrdinatorNumber" Type="varchar" MaxLength="50" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="UpdatedBy" Type="bigint" />
+          <Property Name="EnteredOn" Type="datetime" />
+          <Property Name="EnteredBy" Type="bigint" />
+        </EntityType>
+        <EntityType Name="Result">
+          <Key>
+            <PropertyRef Name="ResID" />
+          </Key>
+          <Property Name="ResID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StudChestID" Type="bigint" />
+          <Property Name="ItmID" Type="bigint" />
+          <Property Name="EnteredBy" Type="bigint" />
+          <Property Name="EnteredOn" Type="datetime" />
+          <Property Name="UpdatedBy" Type="bigint" />
+          <Property Name="UpdatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="EnteredOn" Type="datetime" />
+          <Property Name="UpdatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SecondPrizeTbl">
+          <Key>
+            <PropertyRef Name="SecondPrizeID" />
+          </Key>
+          <Property Name="SecondPrizeID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EventID" Type="bigint" />
+          <Property Name="StudName" Type="varchar" MaxLength="50" />
+          <Property Name="StudCollege" Type="varchar" MaxLength="200" />
+          <Property Name="EnteredOn" Type="datetime" />
+          <Property Name="EnteredBy" Type="bigint" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="UpdatedBy" Type="bigint" />
+        </EntityType>
+        <EntityType Name="SingleEvent">
+          <Key>
+            <PropertyRef Name="SinEvtID" />
+          </Key>
+          <Property Name="SinEvtID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="EnteredBy" Type="bigint" />
+          <Property Name="EnteredOn" Type="datetime" />
+          <Property Name="UpdatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SingleParticipation">
+          <Key>
+            <PropertyRef Name="StudPartID" />
+          </Key>
+          <Property Name="StudPartID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StudID" Type="bigint" />
+          <Property Name="SinEvtID" Type="bigint" />
+          <Property Name="EnteredOn" Type="datetime" />
+          <Property Name="UpdatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="StudID" />
+          </Key>
+          <Property Name="StudID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CredID" Type="bigint" />
+          <Property Name="RegID" Type="varchar" MaxLength="50" />
+          <Property Name="FName" Type="varchar" MaxLength="50" />
+          <Property Name="SName" Type="varchar" MaxLength="50" />
+          <Property Name="Sex" Type="varchar" MaxLength="10" />
+          <Property Name="ClgAdmistnNo" Type="varchar" MaxLength="10" />
+          <Property Name="DateOfBirth" Type="datetime" />
+          <Property Name="ProPic" Type="varchar" MaxLength="50" />
+          <Property Name="ColID" Type="bigint" />
+          <Property Name="DeptID" Type="bigint" />
+          <Property Name="CouID" Type="bigint" />
+          <Property Name="Phone" Type="varchar" MaxLength="50" />
+          <Property Name="IsPhoneVerify" Type="bit" />
+          <Property Name="PhoneVerificationCode" Type="varchar" MaxLength="50" />
+          <Property Name="IsCollegeApproved" Type="bit" />
+          <Property Name="IsEligibilityApproved" Type="bit" />
+          <Property Name="IsChestNoProvided" Type="bit" />
+          <Property Name="CollegeApprovedBy" Type="bigint" />
+          <Property Name="EligibilityApprovedBy" Type="bigint" />
+          <Property Name="ChestNoProvidedBy" Type="bigint" />
+          <Property Name="EnteredOn" Type="datetime" />
+          <Property Name="UpdatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="StudentChestNo">
+          <Key>
+            <PropertyRef Name="StudChestID" />
+          </Key>
+          <Property Name="StudChestID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StudPartID" Type="bigint" />
+          <Property Name="ChestNo" Type="varchar" MaxLength="50" />
+          <Property Name="EnteredBy" Type="bigint" />
+          <Property Name="EnteredOn" Type="datetime" />
+          <Property Name="UpdatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SuperAdmin">
+          <Key>
+            <PropertyRef Name="SuAdID" />
+          </Key>
+          <Property Name="SuAdID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="EnteredOn" Type="datetime" />
+          <Property Name="UpdatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ThirdPrizeTbl">
+          <Key>
+            <PropertyRef Name="ThirdPrizeID" />
+          </Key>
+          <Property Name="ThirdPrizeID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EventID" Type="bigint" />
+          <Property Name="StudName" Type="varchar" MaxLength="50" />
+          <Property Name="StudCollege" Type="varchar" MaxLength="200" />
+          <Property Name="EnteredOn" Type="datetime" />
+          <Property Name="EnteredBy" Type="bigint" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="UpdatedBy" Type="bigint" />
+        </EntityType>
+        <EntityType Name="Volunteer">
+          <Key>
+            <PropertyRef Name="VolID" />
+          </Key>
+          <Property Name="VolID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CredID" Type="bigint" />
+          <Property Name="RoleID" Type="bigint" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Place" Type="varchar" MaxLength="50" />
+          <Property Name="EnteredOn" Type="datetime" />
+          <Property Name="UpdatedOn" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_College_Volunteer">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="College" Type="Self.College" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="College">
+              <PropertyRef Name="EnteredBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CollegeResult_Volunteer">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="CollegeResult" Type="Self.CollegeResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="CollegeResult">
+              <PropertyRef Name="UpdatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CollegeResult_Volunteer1">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="CollegeResult" Type="Self.CollegeResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="CollegeResult">
+              <PropertyRef Name="EnteredBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Course_Department">
+          <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+          <End Role="Course" Type="Self.Course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DeptID" />
+            </Principal>
+            <Dependent Role="Course">
+              <PropertyRef Name="DeptID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EventWiseResult_Volunteer">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="EventWiseResult" Type="Self.EventWiseResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="EventWiseResult">
+              <PropertyRef Name="UpdatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EventWiseResult_Volunteer1">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="EventWiseResult" Type="Self.EventWiseResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="EventWiseResult">
+              <PropertyRef Name="EnteredBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FirstPrizeTbl_EventWiseResult">
+          <End Role="EventWiseResult" Type="Self.EventWiseResult" Multiplicity="0..1" />
+          <End Role="FirstPrizeTbl" Type="Self.FirstPrizeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventWiseResult">
+              <PropertyRef Name="EvntID" />
+            </Principal>
+            <Dependent Role="FirstPrizeTbl">
+              <PropertyRef Name="EventID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FirstPrizeTbl_Volunteer">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="FirstPrizeTbl" Type="Self.FirstPrizeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="FirstPrizeTbl">
+              <PropertyRef Name="EnteredBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FirstPrizeTbl_Volunteer1">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="FirstPrizeTbl" Type="Self.FirstPrizeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="FirstPrizeTbl">
+              <PropertyRef Name="UpdatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GroupHeadPart_GrpEvent">
+          <End Role="GrpEvent" Type="Self.GrpEvent" Multiplicity="0..1" />
+          <End Role="GroupHeadParticipation" Type="Self.GroupHeadParticipation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GrpEvent">
+              <PropertyRef Name="GrpEvtID" />
+            </Principal>
+            <Dependent Role="GroupHeadParticipation">
+              <PropertyRef Name="GrpEvtID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GroupHeadPart_Student">
+          <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+          <End Role="GroupHeadParticipation" Type="Self.GroupHeadParticipation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="StudID" />
+            </Principal>
+            <Dependent Role="GroupHeadParticipation">
+              <PropertyRef Name="TeamHeadID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GroupMemParticiapation_GrpEvent">
+          <End Role="GroupHeadParticipation" Type="Self.GroupHeadParticipation" Multiplicity="0..1" />
+          <End Role="GroupMemParticiapation" Type="Self.GroupMemParticiapation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GroupHeadParticipation">
+              <PropertyRef Name="GrpPartID" />
+            </Principal>
+            <Dependent Role="GroupMemParticiapation">
+              <PropertyRef Name="GrpPartID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GroupMemParticiapation_Student">
+          <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+          <End Role="GroupMemParticiapation" Type="Self.GroupMemParticiapation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="StudID" />
+            </Principal>
+            <Dependent Role="GroupMemParticiapation">
+              <PropertyRef Name="TeamMemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GrpEvent_Volunteer">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="GrpEvent" Type="Self.GrpEvent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="GrpEvent">
+              <PropertyRef Name="EnteredBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ImageGallery_Volunteer">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="ImageGallery" Type="Self.ImageGallery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="ImageGallery">
+              <PropertyRef Name="UploadedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IndivijualResult_Volunteer">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="IndivijualResult" Type="Self.IndivijualResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="IndivijualResult">
+              <PropertyRef Name="EnteredBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IndivijualResult_Volunteer1">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="IndivijualResult" Type="Self.IndivijualResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="IndivijualResult">
+              <PropertyRef Name="UpdatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_News_Volunteer">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="News" Type="Self.News" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="News">
+              <PropertyRef Name="UpdatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PrgShedule_Volunteer">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="PrgShedule" Type="Self.PrgShedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="PrgShedule">
+              <PropertyRef Name="UpdatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PrgShedule_Volunteer1">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="PrgShedule" Type="Self.PrgShedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="PrgShedule">
+              <PropertyRef Name="EnteredBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Result_Item">
+          <End Role="SingleEvent" Type="Self.SingleEvent" Multiplicity="0..1" />
+          <End Role="Result" Type="Self.Result" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SingleEvent">
+              <PropertyRef Name="SinEvtID" />
+            </Principal>
+            <Dependent Role="Result">
+              <PropertyRef Name="ItmID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Result_StudentChestNo">
+          <End Role="StudentChestNo" Type="Self.StudentChestNo" Multiplicity="0..1" />
+          <End Role="Result" Type="Self.Result" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudentChestNo">
+              <PropertyRef Name="StudChestID" />
+            </Principal>
+            <Dependent Role="Result">
+              <PropertyRef Name="StudChestID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Result_Volunteer">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="Result" Type="Self.Result" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="Result">
+              <PropertyRef Name="EnteredBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Result_Volunteer1">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="Result" Type="Self.Result" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="Result">
+              <PropertyRef Name="UpdatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SecondPrizeTbl_EventWiseResult">
+          <End Role="EventWiseResult" Type="Self.EventWiseResult" Multiplicity="0..1" />
+          <End Role="SecondPrizeTbl" Type="Self.SecondPrizeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventWiseResult">
+              <PropertyRef Name="EvntID" />
+            </Principal>
+            <Dependent Role="SecondPrizeTbl">
+              <PropertyRef Name="EventID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SecondPrizeTbl_Volunteer">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="SecondPrizeTbl" Type="Self.SecondPrizeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="SecondPrizeTbl">
+              <PropertyRef Name="EnteredBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SecondPrizeTbl_Volunteer1">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="SecondPrizeTbl" Type="Self.SecondPrizeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="SecondPrizeTbl">
+              <PropertyRef Name="UpdatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_College">
+          <End Role="College" Type="Self.College" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="College">
+              <PropertyRef Name="ColID" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="ColID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_Course">
+          <End Role="Course" Type="Self.Course" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="CouID" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="CouID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_Credential">
+          <End Role="Credential" Type="Self.Credential" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Credential">
+              <PropertyRef Name="CredID" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="CredID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_Department">
+          <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DeptID" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="DeptID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StudentChestNo_StudentParticipation">
+          <End Role="SingleParticipation" Type="Self.SingleParticipation" Multiplicity="0..1" />
+          <End Role="StudentChestNo" Type="Self.StudentChestNo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SingleParticipation">
+              <PropertyRef Name="StudPartID" />
+            </Principal>
+            <Dependent Role="StudentChestNo">
+              <PropertyRef Name="StudPartID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StudentChestNo_Volunteer">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="StudentChestNo" Type="Self.StudentChestNo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="StudentChestNo">
+              <PropertyRef Name="EnteredBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StudentParticipation_Item">
+          <End Role="SingleEvent" Type="Self.SingleEvent" Multiplicity="0..1" />
+          <End Role="SingleParticipation" Type="Self.SingleParticipation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SingleEvent">
+              <PropertyRef Name="SinEvtID" />
+            </Principal>
+            <Dependent Role="SingleParticipation">
+              <PropertyRef Name="SinEvtID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StudentParticipation_Student">
+          <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+          <End Role="SingleParticipation" Type="Self.SingleParticipation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="StudID" />
+            </Principal>
+            <Dependent Role="SingleParticipation">
+              <PropertyRef Name="StudID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ThirdPrizeTbl_EventWiseResult">
+          <End Role="EventWiseResult" Type="Self.EventWiseResult" Multiplicity="0..1" />
+          <End Role="ThirdPrizeTbl" Type="Self.ThirdPrizeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventWiseResult">
+              <PropertyRef Name="EvntID" />
+            </Principal>
+            <Dependent Role="ThirdPrizeTbl">
+              <PropertyRef Name="EventID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ThirdPrizeTbl_Volunteer">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="ThirdPrizeTbl" Type="Self.ThirdPrizeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="ThirdPrizeTbl">
+              <PropertyRef Name="UpdatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ThirdPrizeTbl_Volunteer1">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="ThirdPrizeTbl" Type="Self.ThirdPrizeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="ThirdPrizeTbl">
+              <PropertyRef Name="EnteredBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Volunteer_Credential">
+          <End Role="Credential" Type="Self.Credential" Multiplicity="0..1" />
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Credential">
+              <PropertyRef Name="CredID" />
+            </Principal>
+            <Dependent Role="Volunteer">
+              <PropertyRef Name="CredID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Volunteer_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="Volunteer">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="KeralaYouthFestivalModelStoreContainer">
+          <EntitySet Name="College" EntityType="Self.College" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CollegeResult" EntityType="Self.CollegeResult" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Credential" EntityType="Self.Credential" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EventWiseResult" EntityType="Self.EventWiseResult" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FirstPrizeTbl" EntityType="Self.FirstPrizeTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GeneralSetting" EntityType="Self.GeneralSetting" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GroupHeadParticipation" EntityType="Self.GroupHeadParticipation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GroupMemParticiapation" EntityType="Self.GroupMemParticiapation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GrpEvent" EntityType="Self.GrpEvent" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ImageGallery" EntityType="Self.ImageGallery" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IndivijualResult" EntityType="Self.IndivijualResult" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ParticipantFeMaleResult" EntityType="Self.ParticipantFeMaleResult" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ParticipantMaleResult" EntityType="Self.ParticipantMaleResult" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PrgShedule" EntityType="Self.PrgShedule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Result" EntityType="Self.Result" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SecondPrizeTbl" EntityType="Self.SecondPrizeTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SingleEvent" EntityType="Self.SingleEvent" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SingleParticipation" EntityType="Self.SingleParticipation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StudentChestNo" EntityType="Self.StudentChestNo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SuperAdmin" EntityType="Self.SuperAdmin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ThirdPrizeTbl" EntityType="Self.ThirdPrizeTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Volunteer" EntityType="Self.Volunteer" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_College_Volunteer" Association="Self.FK_College_Volunteer">
+            <End Role="Volunteer" EntitySet="Volunteer" />
+            <End Role="College" EntitySet="College" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CollegeResult_Volunteer" Association="Self.FK_CollegeResult_Volunteer">
+            <End Role="Volunteer" EntitySet="Volunteer" />
+            <End Role="CollegeResult" EntitySet="CollegeResult" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CollegeResult_Volunteer1" Association="Self.FK_CollegeResult_Volunteer1">
+            <End Role="Volunteer" EntitySet="Volunteer" />
+            <End Role="CollegeResult" EntitySet="CollegeResult" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Course_Department" Association="Self.FK_Course_Department">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="Course" EntitySet="Course" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventWiseResult_Volunteer" Association="Self.FK_EventWiseResult_Volunteer">
+            <End Role="Volunteer" EntitySet="Volunteer" />
+            <End Role="EventWiseResult" EntitySet="EventWiseResult" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventWiseResult_Volunteer1" Association="Self.FK_EventWiseResult_Volunteer1">
+            <End Role="Volunteer" EntitySet="Volunteer" />
+            <End Role="EventWiseResult" EntitySet="EventWiseResult" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FirstPrizeTbl_EventWiseResult" Association="Self.FK_FirstPrizeTbl_EventWiseResult">
+            <End Role="EventWiseResult" EntitySet="EventWiseResult" />
+            <End Role="FirstPrizeTbl" EntitySet="FirstPrizeTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FirstPrizeTbl_Volunteer" Association="Self.FK_FirstPrizeTbl_Volunteer">
+            <End Role="Volunteer" EntitySet="Volunteer" />
+            <End Role="FirstPrizeTbl" EntitySet="FirstPrizeTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FirstPrizeTbl_Volunteer1" Association="Self.FK_FirstPrizeTbl_Volunteer1">
+            <End Role="Volunteer" EntitySet="Volunteer" />
+            <End Role="FirstPrizeTbl" EntitySet="FirstPrizeTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GroupHeadPart_GrpEvent" Association="Self.FK_GroupHeadPart_GrpEvent">
+            <End Role="GrpEvent" EntitySet="GrpEvent" />
+            <End Role="GroupHeadParticipation" EntitySet="GroupHeadParticipation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GroupHeadPart_Student" Association="Self.FK_GroupHeadPart_Student">
+            <End Role="Student" EntitySet="Student" />
+            <End Role="GroupHeadParticipation" EntitySet="GroupHeadParticipation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GroupMemParticiapation_GrpEvent" Association="Self.FK_GroupMemParticiapation_GrpEvent">
+            <End Role="GroupHeadParticipation" EntitySet="GroupHeadParticipation" />
+            <End Role="GroupMemParticiapation" EntitySet="GroupMemParticiapation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GroupMemParticiapation_Student" Association="Self.FK_GroupMemParticiapation_Student">
+            <End Role="Student" EntitySet="Student" />
+            <End Role="GroupMemParticiapation" EntitySet="GroupMemParticiapation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GrpEvent_Volunteer" Association="Self.FK_GrpEvent_Volunteer">
+            <End Role="Volunteer" EntitySet="Volunteer" />
+            <End Role="GrpEvent" EntitySet="GrpEvent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ImageGallery_Volunteer" Association="Self.FK_ImageGallery_Volunteer">
+            <End Role="Volunteer" EntitySet="Volunteer" />
+            <End Role="ImageGallery" EntitySet="ImageGallery" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IndivijualResult_Volunteer" Association="Self.FK_IndivijualResult_Volunteer">
+            <End Role="Volunteer" EntitySet="Volunteer" />
+            <End Role="IndivijualResult" EntitySet="IndivijualResult" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IndivijualResult_Volunteer1" Association="Self.FK_IndivijualResult_Volunteer1">
+            <End Role="Volunteer" EntitySet="Volunteer" />
+            <End Role="IndivijualResult" EntitySet="IndivijualResult" />
+          </AssociationSet>
+          <AssociationSet Name="FK_News_Volunteer" Association="Self.FK_News_Volunteer">
+            <End Role="Volunteer" EntitySet="Volunteer" />
+            <End Role="News" EntitySet="News" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PrgShedule_Volunteer" Association="Self.FK_PrgShedule_Volunteer">
+            <End Role="Volunteer" EntitySet="Volunteer" />
+            <End Role="PrgShedule" EntitySet="PrgShedule" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PrgShedule_Volunteer1" Association="Self.FK_PrgShedule_Volunteer1">
+            <End Role="Volunteer" EntitySet="Volunteer" />
+            <End Role="PrgShedule" EntitySet="PrgShedule" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Result_Item" Association="Self.FK_Result_Item">
+            <End Role="SingleEvent" EntitySet="SingleEvent" />
+            <End Role="Result" EntitySet="Result" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Result_StudentChestNo" Association="Self.FK_Result_StudentChestNo">
+            <End Role="StudentChestNo" EntitySet="StudentChestNo" />
+            <End Role="Result" EntitySet="Result" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Result_Volunteer" Association="Self.FK_Result_Volunteer">
+            <End Role="Volunteer" EntitySet="Volunteer" />
+            <End Role="Result" EntitySet="Result" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Result_Volunteer1" Association="Self.FK_Result_Volunteer1">
+            <End Role="Volunteer" EntitySet="Volunteer" />
+            <End Role="Result" EntitySet="Result" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SecondPrizeTbl_EventWiseResult" Association="Self.FK_SecondPrizeTbl_EventWiseResult">
+            <End Role="EventWiseResult" EntitySet="EventWiseResult" />
+            <End Role="SecondPrizeTbl" EntitySet="SecondPrizeTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SecondPrizeTbl_Volunteer" Association="Self.FK_SecondPrizeTbl_Volunteer">
+            <End Role="Volunteer" EntitySet="Volunteer" />
+            <End Role="SecondPrizeTbl" EntitySet="SecondPrizeTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SecondPrizeTbl_Volunteer1" Association="Self.FK_SecondPrizeTbl_Volunteer1">
+            <End Role="Volunteer" EntitySet="Volunteer" />
+            <End Role="SecondPrizeTbl" EntitySet="SecondPrizeTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_College" Association="Self.FK_Student_College">
+            <End Role="College" EntitySet="College" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_Course" Association="Self.FK_Student_Course">
+            <End Role="Course" EntitySet="Course" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_Credential" Association="Self.FK_Student_Credential">
+            <End Role="Credential" EntitySet="Credential" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_Department" Association="Self.FK_Student_Department">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="Student" EntitySet="Student" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentChestNo_StudentParticipation" Association="Self.FK_StudentChestNo_StudentParticipation">
+            <End Role="SingleParticipation" EntitySet="SingleParticipation" />
+            <End Role="StudentChestNo" EntitySet="StudentChestNo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentChestNo_Volunteer" Association="Self.FK_StudentChestNo_Volunteer">
+            <End Role="Volunteer" EntitySet="Volunteer" />
+            <End Role="StudentChestNo" EntitySet="StudentChestNo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentParticipation_Item" Association="Self.FK_StudentParticipation_Item">
+            <End Role="SingleEvent" EntitySet="SingleEvent" />
+            <End Role="SingleParticipation" EntitySet="SingleParticipation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentParticipation_Student" Association="Self.FK_StudentParticipation_Student">
+            <End Role="Student" EntitySet="Student" />
+            <End Role="SingleParticipation" EntitySet="SingleParticipation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ThirdPrizeTbl_EventWiseResult" Association="Self.FK_ThirdPrizeTbl_EventWiseResult">
+            <End Role="EventWiseResult" EntitySet="EventWiseResult" />
+            <End Role="ThirdPrizeTbl" EntitySet="ThirdPrizeTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ThirdPrizeTbl_Volunteer" Association="Self.FK_ThirdPrizeTbl_Volunteer">
+            <End Role="Volunteer" EntitySet="Volunteer" />
+            <End Role="ThirdPrizeTbl" EntitySet="ThirdPrizeTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ThirdPrizeTbl_Volunteer1" Association="Self.FK_ThirdPrizeTbl_Volunteer1">
+            <End Role="Volunteer" EntitySet="Volunteer" />
+            <End Role="ThirdPrizeTbl" EntitySet="ThirdPrizeTbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Volunteer_Credential" Association="Self.FK_Volunteer_Credential">
+            <End Role="Credential" EntitySet="Credential" />
+            <End Role="Volunteer" EntitySet="Volunteer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Volunteer_Role" Association="Self.FK_Volunteer_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Volunteer" EntitySet="Volunteer" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KeralaYouthFestivalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="College">
+          <Key>
+            <PropertyRef Name="ColID" />
+          </Key>
+          <Property Name="ColID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EnteredBy" Type="Int64" />
+          <Property Name="EnteredOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Volunteer" Relationship="Self.FK_College_Volunteer" FromRole="College" ToRole="Volunteer" />
+          <NavigationProperty Name="Students" Relationship="Self.FK_Student_College" FromRole="College" ToRole="Student" />
+        </EntityType>
+        <EntityType Name="CollegeResult">
+          <Key>
+            <PropertyRef Name="ColgID" />
+          </Key>
+          <Property Name="ColgID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CollegeName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CollegePoint" Type="Int64" />
+          <Property Name="EnteredOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="EnteredBy" Type="Int64" />
+          <Property Name="UpdatedBy" Type="Int64" />
+          <NavigationProperty Name="Volunteer" Relationship="Self.FK_CollegeResult_Volunteer" FromRole="CollegeResult" ToRole="Volunteer" />
+          <NavigationProperty Name="Volunteer1" Relationship="Self.FK_CollegeResult_Volunteer1" FromRole="CollegeResult" ToRole="Volunteer" />
+        </EntityType>
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="CouID" />
+          </Key>
+          <Property Name="CouID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DeptID" Type="Int64" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EnteredBy" Type="Int64" />
+          <Property Name="EnteredOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Department" Relationship="Self.FK_Course_Department" FromRole="Course" ToRole="Department" />
+          <NavigationProperty Name="Students" Relationship="Self.FK_Student_Course" FromRole="Course" ToRole="Student" />
+        </EntityType>
+        <EntityType Name="Credential">
+          <Key>
+            <PropertyRef Name="CredID" />
+          </Key>
+          <Property Name="CredID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsEmailVerify" Type="Boolean" />
+          <Property Name="EmailVerificationCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PasswordResetCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastLoginIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastLoginOn" Type="DateTime" Precision="3" />
+          <Property Name="EnteredOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Students" Relationship="Self.FK_Student_Credential" FromRole="Credential" ToRole="Student" />
+          <NavigationProperty Name="Volunteers" Relationship="Self.FK_Volunteer_Credential" FromRole="Credential" ToRole="Volunteer" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DeptID" />
+          </Key>
+          <Property Name="DeptID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EnteredBy" Type="Int64" />
+          <Property Name="EnteredOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Courses" Relationship="Self.FK_Course_Department" FromRole="Department" ToRole="Course" />
+          <NavigationProperty Name="Students" Relationship="Self.FK_Student_Department" FromRole="Department" ToRole="Student" />
+        </EntityType>
+        <EntityType Name="EventWiseResult">
+          <Key>
+            <PropertyRef Name="EvntID" />
+          </Key>
+          <Property Name="EvntID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EventName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FStudChestNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FStudName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FStudCollege" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SStudChestNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SStudName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SStudCollege" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TStudChestNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TStudName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TStudCollege" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EnteredOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int64" />
+          <Property Name="EnteredBy" Type="Int64" />
+          <NavigationProperty Name="Volunteer" Relationship="Self.FK_EventWiseResult_Volunteer" FromRole="EventWiseResult" ToRole="Volunteer" />
+          <NavigationProperty Name="Volunteer1" Relationship="Self.FK_EventWiseResult_Volunteer1" FromRole="EventWiseResult" ToRole="Volunteer" />
+          <NavigationProperty Name="FirstPrizeTbls" Relationship="Self.FK_FirstPrizeTbl_EventWiseResult" FromRole="EventWiseResult" ToRole="FirstPrizeTbl" />
+          <NavigationProperty Name="SecondPrizeTbls" Relationship="Self.FK_SecondPrizeTbl_EventWiseResult" FromRole="EventWiseResult" ToRole="SecondPrizeTbl" />
+          <NavigationProperty Name="ThirdPrizeTbls" Relationship="Self.FK_ThirdPrizeTbl_EventWiseResult" FromRole="EventWiseResult" ToRole="ThirdPrizeTbl" />
+        </EntityType>
+        <EntityType Name="FirstPrizeTbl">
+          <Key>
+            <PropertyRef Name="FIrstPrizeID" />
+          </Key>
+          <Property Name="FIrstPrizeID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EventID" Type="Int64" />
+          <Property Name="StudName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StudCollege" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="EnteredOn" Type="DateTime" Precision="3" />
+          <Property Name="EnteredBy" Type="Int64" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int64" />
+          <NavigationProperty Name="EventWiseResult" Relationship="Self.FK_FirstPrizeTbl_EventWiseResult" FromRole="FirstPrizeTbl" ToRole="EventWiseResult" />
+          <NavigationProperty Name="Volunteer" Relationship="Self.FK_FirstPrizeTbl_Volunteer" FromRole="FirstPrizeTbl" ToRole="Volunteer" />
+          <NavigationProperty Name="Volunteer1" Relationship="Self.FK_FirstPrizeTbl_Volunteer1" FromRole="FirstPrizeTbl" ToRole="Volunteer" />
+        </EntityType>
+        <EntityType Name="GeneralSetting">
+          <Key>
+            <PropertyRef Name="GenSetID" />
+          </Key>
+          <Property Name="GenSetID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EnteredOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="GroupHeadParticipation">
+          <Key>
+            <PropertyRef Name="GrpPartID" />
+          </Key>
+          <Property Name="GrpPartID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TeamHeadID" Type="Int64" />
+          <Property Name="GrpEvtID" Type="Int64" />
+          <Property Name="EnteredOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="GrpEvent" Relationship="Self.FK_GroupHeadPart_GrpEvent" FromRole="GroupHeadParticipation" ToRole="GrpEvent" />
+          <NavigationProperty Name="Student" Relationship="Self.FK_GroupHeadPart_Student" FromRole="GroupHeadParticipation" ToRole="Student" />
+          <NavigationProperty Name="GroupMemParticiapations" Relationship="Self.FK_GroupMemParticiapation_GrpEvent" FromRole="GroupHeadParticipation" ToRole="GroupMemParticiapation" />
+        </EntityType>
+        <EntityType Name="GroupMemParticiapation">
+          <Key>
+            <PropertyRef Name="GrpMemPartID" />
+          </Key>
+          <Property Name="GrpMemPartID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GrpPartID" Type="Int64" />
+          <Property Name="TeamMemID" Type="Int64" />
+          <Property Name="EnteredOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="GroupHeadParticipation" Relationship="Self.FK_GroupMemParticiapation_GrpEvent" FromRole="GroupMemParticiapation" ToRole="GroupHeadParticipation" />
+          <NavigationProperty Name="Student" Relationship="Self.FK_GroupMemParticiapation_Student" FromRole="GroupMemParticiapation" ToRole="Student" />
+        </EntityType>
+        <EntityType Name="GrpEvent">
+          <Key>
+            <PropertyRef Name="GrpEvtID" />
+          </Key>
+          <Property Name="GrpEvtID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GrpPartcCount" Type="Int32" />
+          <Property Name="EnteredBy" Type="Int64" />
+          <Property Name="EnteredOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="GroupHeadParticipations" Relationship="Self.FK_GroupHeadPart_GrpEvent" FromRole="GrpEvent" ToRole="GroupHeadParticipation" />
+          <NavigationProperty Name="Volunteer" Relationship="Self.FK_GrpEvent_Volunteer" FromRole="GrpEvent" ToRole="Volunteer" />
+        </EntityType>
+        <EntityType Name="ImageGallery">
+          <Key>
+            <PropertyRef Name="ImGaID" />
+          </Key>
+          <Property Name="ImGaID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ImgURL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ImgAlt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UploadedBy" Type="Int64" />
+          <Property Name="EnteredOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Volunteer" Relationship="Self.FK_ImageGallery_Volunteer" FromRole="ImageGallery" ToRole="Volunteer" />
+        </EntityType>
+        <EntityType Name="IndivijualResult">
+          <Key>
+            <PropertyRef Name="IndvID" />
+          </Key>
+          <Property Name="IndvID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StudName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StudPoint" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StudCollege" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EnteredOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="EnteredBy" Type="Int64" />
+          <Property Name="UpdatedBy" Type="Int64" />
+          <NavigationProperty Name="Volunteer" Relationship="Self.FK_IndivijualResult_Volunteer" FromRole="IndivijualResult" ToRole="Volunteer" />
+          <NavigationProperty Name="Volunteer1" Relationship="Self.FK_IndivijualResult_Volunteer1" FromRole="IndivijualResult" ToRole="Volunteer" />
+        </EntityType>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="NewsID" />
+          </Key>
+          <Property Name="NewsID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NewsTitle" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="NewsInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="NewsLink" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedBy" Type="Int64" />
+          <Property Name="EnteredOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Volunteer" Relationship="Self.FK_News_Volunteer" FromRole="News" ToRole="Volunteer" />
+        </EntityType>
+        <EntityType Name="ParticipantFeMaleResult">
+          <Key>
+            <PropertyRef Name="PartFeMaleResultID" />
+          </Key>
+          <Property Name="PartFeMaleResultID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StudName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CollegeName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="StudPoint" Type="Int64" />
+          <Property Name="EnteredOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ParticipantMaleResult">
+          <Key>
+            <PropertyRef Name="PartMaleResultID" />
+          </Key>
+          <Property Name="PartMaleResultID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StudName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CollegeName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="StudPoint" Type="Int64" />
+          <Property Name="EnteredOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="PrgShedule">
+          <Key>
+            <PropertyRef Name="SheduleID" />
+          </Key>
+          <Property Name="SheduleID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EventName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EventCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SheduleDate" Type="DateTime" Precision="0" />
+          <Property Name="StartingTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EndingTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Stage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CollegeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CoOrdinatorName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CoOrdinatorNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int64" />
+          <Property Name="EnteredOn" Type="DateTime" Precision="3" />
+          <Property Name="EnteredBy" Type="Int64" />
+          <NavigationProperty Name="Volunteer" Relationship="Self.FK_PrgShedule_Volunteer" FromRole="PrgShedule" ToRole="Volunteer" />
+          <NavigationProperty Name="Volunteer1" Relationship="Self.FK_PrgShedule_Volunteer1" FromRole="PrgShedule" ToRole="Volunteer" />
+        </EntityType>
+        <EntityType Name="Result">
+          <Key>
+            <PropertyRef Name="ResID" />
+          </Key>
+          <Property Name="ResID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StudChestID" Type="Int64" />
+          <Property Name="ItmID" Type="Int64" />
+          <Property Name="EnteredBy" Type="Int64" />
+          <Property Name="EnteredOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int64" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="SingleEvent" Relationship="Self.FK_Result_Item" FromRole="Result" ToRole="SingleEvent" />
+          <NavigationProperty Name="StudentChestNo" Relationship="Self.FK_Result_StudentChestNo" FromRole="Result" ToRole="StudentChestNo" />
+          <NavigationProperty Name="Volunteer" Relationship="Self.FK_Result_Volunteer" FromRole="Result" ToRole="Volunteer" />
+          <NavigationProperty Name="Volunteer1" Relationship="Self.FK_Result_Volunteer1" FromRole="Result" ToRole="Volunteer" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EnteredOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Volunteers" Relationship="Self.FK_Volunteer_Role" FromRole="Role" ToRole="Volunteer" />
+        </EntityType>
+        <EntityType Name="SecondPrizeTbl">
+          <Key>
+            <PropertyRef Name="SecondPrizeID" />
+          </Key>
+          <Property Name="SecondPrizeID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EventID" Type="Int64" />
+          <Property Name="StudName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StudCollege" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="EnteredOn" Type="DateTime" Precision="3" />
+          <Property Name="EnteredBy" Type="Int64" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int64" />
+          <NavigationProperty Name="EventWiseResult" Relationship="Self.FK_SecondPrizeTbl_EventWiseResult" FromRole="SecondPrizeTbl" ToRole="EventWiseResult" />
+          <NavigationProperty Name="Volunteer" Relationship="Self.FK_SecondPrizeTbl_Volunteer" FromRole="SecondPrizeTbl" ToRole="Volunteer" />
+          <NavigationProperty Name="Volunteer1" Relationship="Self.FK_SecondPrizeTbl_Volunteer1" FromRole="SecondPrizeTbl" ToRole="Volunteer" />
+        </EntityType>
+        <EntityType Name="SingleEvent">
+          <Key>
+            <PropertyRef Name="SinEvtID" />
+          </Key>
+          <Property Name="SinEvtID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EnteredBy" Type="Int64" />
+          <Property Name="EnteredOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Results" Relationship="Self.FK_Result_Item" FromRole="SingleEvent" ToRole="Result" />
+          <NavigationProperty Name="SingleParticipations" Relationship="Self.FK_StudentParticipation_Item" FromRole="SingleEvent" ToRole="SingleParticipation" />
+        </EntityType>
+        <EntityType Name="SingleParticipation">
+          <Key>
+            <PropertyRef Name="StudPartID" />
+          </Key>
+          <Property Name="StudPartID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StudID" Type="Int64" />
+          <Property Name="SinEvtID" Type="Int64" />
+          <Property Name="EnteredOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="SingleEvent" Relationship="Self.FK_StudentParticipation_Item" FromRole="SingleParticipation" ToRole="SingleEvent" />
+          <NavigationProperty Name="StudentChestNoes" Relationship="Self.FK_StudentChestNo_StudentParticipation" FromRole="SingleParticipation" ToRole="StudentChestNo" />
+          <NavigationProperty Name="Student" Relationship="Self.FK_StudentParticipation_Student" FromRole="SingleParticipation" ToRole="Student" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="StudID" />
+          </Key>
+          <Property Name="StudID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CredID" Type="Int64" />
+          <Property Name="RegID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sex" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ClgAdmistnNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+          <Property Name="ProPic" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ColID" Type="Int64" />
+          <Property Name="DeptID" Type="Int64" />
+          <Property Name="CouID" Type="Int64" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsPhoneVerify" Type="Boolean" />
+          <Property Name="PhoneVerificationCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsCollegeApproved" Type="Boolean" />
+          <Property Name="IsEligibilityApproved" Type="Boolean" />
+          <Property Name="IsChestNoProvided" Type="Boolean" />
+          <Property Name="CollegeApprovedBy" Type="Int64" />
+          <Property Name="EligibilityApprovedBy" Type="Int64" />
+          <Property Name="ChestNoProvidedBy" Type="Int64" />
+          <Property Name="EnteredOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="College" Relationship="Self.FK_Student_College" FromRole="Student" ToRole="College" />
+          <NavigationProperty Name="Course" Relationship="Self.FK_Student_Course" FromRole="Student" ToRole="Course" />
+          <NavigationProperty Name="Credential" Relationship="Self.FK_Student_Credential" FromRole="Student" ToRole="Credential" />
+          <NavigationProperty Name="Department" Relationship="Self.FK_Student_Department" FromRole="Student" ToRole="Department" />
+          <NavigationProperty Name="GroupHeadParticipations" Relationship="Self.FK_GroupHeadPart_Student" FromRole="Student" ToRole="GroupHeadParticipation" />
+          <NavigationProperty Name="GroupMemParticiapations" Relationship="Self.FK_GroupMemParticiapation_Student" FromRole="Student" ToRole="GroupMemParticiapation" />
+          <NavigationProperty Name="SingleParticipations" Relationship="Self.FK_StudentParticipation_Student" FromRole="Student" ToRole="SingleParticipation" />
+        </EntityType>
+        <EntityType Name="StudentChestNo">
+          <Key>
+            <PropertyRef Name="StudChestID" />
+          </Key>
+          <Property Name="StudChestID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StudPartID" Type="Int64" />
+          <Property Name="ChestNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EnteredBy" Type="Int64" />
+          <Property Name="EnteredOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Results" Relationship="Self.FK_Result_StudentChestNo" FromRole="StudentChestNo" ToRole="Result" />
+          <NavigationProperty Name="SingleParticipation" Relationship="Self.FK_StudentChestNo_StudentParticipation" FromRole="StudentChestNo" ToRole="SingleParticipation" />
+          <NavigationProperty Name="Volunteer" Relationship="Self.FK_StudentChestNo_Volunteer" FromRole="StudentChestNo" ToRole="Volunteer" />
+        </EntityType>
+        <EntityType Name="SuperAdmin">
+          <Key>
+            <PropertyRef Name="SuAdID" />
+          </Key>
+          <Property Name="SuAdID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EnteredOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ThirdPrizeTbl">
+          <Key>
+            <PropertyRef Name="ThirdPrizeID" />
+          </Key>
+          <Property Name="ThirdPrizeID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EventID" Type="Int64" />
+          <Property Name="StudName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StudCollege" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="EnteredOn" Type="DateTime" Precision="3" />
+          <Property Name="EnteredBy" Type="Int64" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int64" />
+          <NavigationProperty Name="EventWiseResult" Relationship="Self.FK_ThirdPrizeTbl_EventWiseResult" FromRole="ThirdPrizeTbl" ToRole="EventWiseResult" />
+          <NavigationProperty Name="Volunteer" Relationship="Self.FK_ThirdPrizeTbl_Volunteer" FromRole="ThirdPrizeTbl" ToRole="Volunteer" />
+          <NavigationProperty Name="Volunteer1" Relationship="Self.FK_ThirdPrizeTbl_Volunteer1" FromRole="ThirdPrizeTbl" ToRole="Volunteer" />
+        </EntityType>
+        <EntityType Name="Volunteer">
+          <Key>
+            <PropertyRef Name="VolID" />
+          </Key>
+          <Property Name="VolID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CredID" Type="Int64" />
+          <Property Name="RoleID" Type="Int64" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Place" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EnteredOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Colleges" Relationship="Self.FK_College_Volunteer" FromRole="Volunteer" ToRole="College" />
+          <NavigationProperty Name="CollegeResults" Relationship="Self.FK_CollegeResult_Volunteer" FromRole="Volunteer" ToRole="CollegeResult" />
+          <NavigationProperty Name="CollegeResults1" Relationship="Self.FK_CollegeResult_Volunteer1" FromRole="Volunteer" ToRole="CollegeResult" />
+          <NavigationProperty Name="Credential" Relationship="Self.FK_Volunteer_Credential" FromRole="Volunteer" ToRole="Credential" />
+          <NavigationProperty Name="EventWiseResults" Relationship="Self.FK_EventWiseResult_Volunteer" FromRole="Volunteer" ToRole="EventWiseResult" />
+          <NavigationProperty Name="EventWiseResults1" Relationship="Self.FK_EventWiseResult_Volunteer1" FromRole="Volunteer" ToRole="EventWiseResult" />
+          <NavigationProperty Name="FirstPrizeTbls" Relationship="Self.FK_FirstPrizeTbl_Volunteer" FromRole="Volunteer" ToRole="FirstPrizeTbl" />
+          <NavigationProperty Name="FirstPrizeTbls1" Relationship="Self.FK_FirstPrizeTbl_Volunteer1" FromRole="Volunteer" ToRole="FirstPrizeTbl" />
+          <NavigationProperty Name="GrpEvents" Relationship="Self.FK_GrpEvent_Volunteer" FromRole="Volunteer" ToRole="GrpEvent" />
+          <NavigationProperty Name="ImageGalleries" Relationship="Self.FK_ImageGallery_Volunteer" FromRole="Volunteer" ToRole="ImageGallery" />
+          <NavigationProperty Name="IndivijualResults" Relationship="Self.FK_IndivijualResult_Volunteer" FromRole="Volunteer" ToRole="IndivijualResult" />
+          <NavigationProperty Name="IndivijualResults1" Relationship="Self.FK_IndivijualResult_Volunteer1" FromRole="Volunteer" ToRole="IndivijualResult" />
+          <NavigationProperty Name="News" Relationship="Self.FK_News_Volunteer" FromRole="Volunteer" ToRole="News" />
+          <NavigationProperty Name="PrgShedules" Relationship="Self.FK_PrgShedule_Volunteer" FromRole="Volunteer" ToRole="PrgShedule" />
+          <NavigationProperty Name="PrgShedules1" Relationship="Self.FK_PrgShedule_Volunteer1" FromRole="Volunteer" ToRole="PrgShedule" />
+          <NavigationProperty Name="Results" Relationship="Self.FK_Result_Volunteer" FromRole="Volunteer" ToRole="Result" />
+          <NavigationProperty Name="Results1" Relationship="Self.FK_Result_Volunteer1" FromRole="Volunteer" ToRole="Result" />
+          <NavigationProperty Name="Role" Relationship="Self.FK_Volunteer_Role" FromRole="Volunteer" ToRole="Role" />
+          <NavigationProperty Name="SecondPrizeTbls" Relationship="Self.FK_SecondPrizeTbl_Volunteer" FromRole="Volunteer" ToRole="SecondPrizeTbl" />
+          <NavigationProperty Name="SecondPrizeTbls1" Relationship="Self.FK_SecondPrizeTbl_Volunteer1" FromRole="Volunteer" ToRole="SecondPrizeTbl" />
+          <NavigationProperty Name="StudentChestNoes" Relationship="Self.FK_StudentChestNo_Volunteer" FromRole="Volunteer" ToRole="StudentChestNo" />
+          <NavigationProperty Name="ThirdPrizeTbls" Relationship="Self.FK_ThirdPrizeTbl_Volunteer" FromRole="Volunteer" ToRole="ThirdPrizeTbl" />
+          <NavigationProperty Name="ThirdPrizeTbls1" Relationship="Self.FK_ThirdPrizeTbl_Volunteer1" FromRole="Volunteer" ToRole="ThirdPrizeTbl" />
+        </EntityType>
+        <Association Name="FK_College_Volunteer">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="College" Type="Self.College" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="College">
+              <PropertyRef Name="EnteredBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_College">
+          <End Role="College" Type="Self.College" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="College">
+              <PropertyRef Name="ColID" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="ColID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CollegeResult_Volunteer">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="CollegeResult" Type="Self.CollegeResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="CollegeResult">
+              <PropertyRef Name="UpdatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CollegeResult_Volunteer1">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="CollegeResult" Type="Self.CollegeResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="CollegeResult">
+              <PropertyRef Name="EnteredBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Course_Department">
+          <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+          <End Role="Course" Type="Self.Course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DeptID" />
+            </Principal>
+            <Dependent Role="Course">
+              <PropertyRef Name="DeptID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_Course">
+          <End Role="Course" Type="Self.Course" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="CouID" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="CouID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_Credential">
+          <End Role="Credential" Type="Self.Credential" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Credential">
+              <PropertyRef Name="CredID" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="CredID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Volunteer_Credential">
+          <End Role="Credential" Type="Self.Credential" Multiplicity="0..1" />
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Credential">
+              <PropertyRef Name="CredID" />
+            </Principal>
+            <Dependent Role="Volunteer">
+              <PropertyRef Name="CredID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Student_Department">
+          <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+          <End Role="Student" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DeptID" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="DeptID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EventWiseResult_Volunteer">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="EventWiseResult" Type="Self.EventWiseResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="EventWiseResult">
+              <PropertyRef Name="UpdatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EventWiseResult_Volunteer1">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="EventWiseResult" Type="Self.EventWiseResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="EventWiseResult">
+              <PropertyRef Name="EnteredBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FirstPrizeTbl_EventWiseResult">
+          <End Role="EventWiseResult" Type="Self.EventWiseResult" Multiplicity="0..1" />
+          <End Role="FirstPrizeTbl" Type="Self.FirstPrizeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventWiseResult">
+              <PropertyRef Name="EvntID" />
+            </Principal>
+            <Dependent Role="FirstPrizeTbl">
+              <PropertyRef Name="EventID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SecondPrizeTbl_EventWiseResult">
+          <End Role="EventWiseResult" Type="Self.EventWiseResult" Multiplicity="0..1" />
+          <End Role="SecondPrizeTbl" Type="Self.SecondPrizeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventWiseResult">
+              <PropertyRef Name="EvntID" />
+            </Principal>
+            <Dependent Role="SecondPrizeTbl">
+              <PropertyRef Name="EventID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ThirdPrizeTbl_EventWiseResult">
+          <End Role="EventWiseResult" Type="Self.EventWiseResult" Multiplicity="0..1" />
+          <End Role="ThirdPrizeTbl" Type="Self.ThirdPrizeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventWiseResult">
+              <PropertyRef Name="EvntID" />
+            </Principal>
+            <Dependent Role="ThirdPrizeTbl">
+              <PropertyRef Name="EventID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FirstPrizeTbl_Volunteer">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="FirstPrizeTbl" Type="Self.FirstPrizeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="FirstPrizeTbl">
+              <PropertyRef Name="EnteredBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FirstPrizeTbl_Volunteer1">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="FirstPrizeTbl" Type="Self.FirstPrizeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="FirstPrizeTbl">
+              <PropertyRef Name="UpdatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GroupHeadPart_GrpEvent">
+          <End Role="GrpEvent" Type="Self.GrpEvent" Multiplicity="0..1" />
+          <End Role="GroupHeadParticipation" Type="Self.GroupHeadParticipation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GrpEvent">
+              <PropertyRef Name="GrpEvtID" />
+            </Principal>
+            <Dependent Role="GroupHeadParticipation">
+              <PropertyRef Name="GrpEvtID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GroupHeadPart_Student">
+          <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+          <End Role="GroupHeadParticipation" Type="Self.GroupHeadParticipation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="StudID" />
+            </Principal>
+            <Dependent Role="GroupHeadParticipation">
+              <PropertyRef Name="TeamHeadID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GroupMemParticiapation_GrpEvent">
+          <End Role="GroupHeadParticipation" Type="Self.GroupHeadParticipation" Multiplicity="0..1" />
+          <End Role="GroupMemParticiapation" Type="Self.GroupMemParticiapation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GroupHeadParticipation">
+              <PropertyRef Name="GrpPartID" />
+            </Principal>
+            <Dependent Role="GroupMemParticiapation">
+              <PropertyRef Name="GrpPartID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GroupMemParticiapation_Student">
+          <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+          <End Role="GroupMemParticiapation" Type="Self.GroupMemParticiapation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="StudID" />
+            </Principal>
+            <Dependent Role="GroupMemParticiapation">
+              <PropertyRef Name="TeamMemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GrpEvent_Volunteer">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="GrpEvent" Type="Self.GrpEvent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="GrpEvent">
+              <PropertyRef Name="EnteredBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ImageGallery_Volunteer">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="ImageGallery" Type="Self.ImageGallery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="ImageGallery">
+              <PropertyRef Name="UploadedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IndivijualResult_Volunteer">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="IndivijualResult" Type="Self.IndivijualResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="IndivijualResult">
+              <PropertyRef Name="EnteredBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IndivijualResult_Volunteer1">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="IndivijualResult" Type="Self.IndivijualResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="IndivijualResult">
+              <PropertyRef Name="UpdatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_News_Volunteer">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="News" Type="Self.News" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="News">
+              <PropertyRef Name="UpdatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PrgShedule_Volunteer">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="PrgShedule" Type="Self.PrgShedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="PrgShedule">
+              <PropertyRef Name="UpdatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PrgShedule_Volunteer1">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="PrgShedule" Type="Self.PrgShedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="PrgShedule">
+              <PropertyRef Name="EnteredBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Result_Item">
+          <End Role="SingleEvent" Type="Self.SingleEvent" Multiplicity="0..1" />
+          <End Role="Result" Type="Self.Result" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SingleEvent">
+              <PropertyRef Name="SinEvtID" />
+            </Principal>
+            <Dependent Role="Result">
+              <PropertyRef Name="ItmID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Result_StudentChestNo">
+          <End Role="StudentChestNo" Type="Self.StudentChestNo" Multiplicity="0..1" />
+          <End Role="Result" Type="Self.Result" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudentChestNo">
+              <PropertyRef Name="StudChestID" />
+            </Principal>
+            <Dependent Role="Result">
+              <PropertyRef Name="StudChestID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Result_Volunteer">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="Result" Type="Self.Result" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="Result">
+              <PropertyRef Name="EnteredBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Result_Volunteer1">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="Result" Type="Self.Result" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="Result">
+              <PropertyRef Name="UpdatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Volunteer_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="Volunteer">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SecondPrizeTbl_Volunteer">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="SecondPrizeTbl" Type="Self.SecondPrizeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="SecondPrizeTbl">
+              <PropertyRef Name="EnteredBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SecondPrizeTbl_Volunteer1">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="SecondPrizeTbl" Type="Self.SecondPrizeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="SecondPrizeTbl">
+              <PropertyRef Name="UpdatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StudentParticipation_Item">
+          <End Role="SingleEvent" Type="Self.SingleEvent" Multiplicity="0..1" />
+          <End Role="SingleParticipation" Type="Self.SingleParticipation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SingleEvent">
+              <PropertyRef Name="SinEvtID" />
+            </Principal>
+            <Dependent Role="SingleParticipation">
+              <PropertyRef Name="SinEvtID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StudentChestNo_StudentParticipation">
+          <End Role="SingleParticipation" Type="Self.SingleParticipation" Multiplicity="0..1" />
+          <End Role="StudentChestNo" Type="Self.StudentChestNo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SingleParticipation">
+              <PropertyRef Name="StudPartID" />
+            </Principal>
+            <Dependent Role="StudentChestNo">
+              <PropertyRef Name="StudPartID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StudentParticipation_Student">
+          <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+          <End Role="SingleParticipation" Type="Self.SingleParticipation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="StudID" />
+            </Principal>
+            <Dependent Role="SingleParticipation">
+              <PropertyRef Name="StudID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StudentChestNo_Volunteer">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="StudentChestNo" Type="Self.StudentChestNo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="StudentChestNo">
+              <PropertyRef Name="EnteredBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ThirdPrizeTbl_Volunteer">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="ThirdPrizeTbl" Type="Self.ThirdPrizeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="ThirdPrizeTbl">
+              <PropertyRef Name="UpdatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ThirdPrizeTbl_Volunteer1">
+          <End Role="Volunteer" Type="Self.Volunteer" Multiplicity="0..1" />
+          <End Role="ThirdPrizeTbl" Type="Self.ThirdPrizeTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Volunteer">
+              <PropertyRef Name="VolID" />
+            </Principal>
+            <Dependent Role="ThirdPrizeTbl">
+              <PropertyRef Name="EnteredBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Colleges" EntityType="Self.College" />
+          <EntitySet Name="CollegeResults" EntityType="Self.CollegeResult" />
+          <EntitySet Name="Courses" EntityType="Self.Course" />
+          <EntitySet Name="Credentials" EntityType="Self.Credential" />
+          <EntitySet Name="Departments" EntityType="Self.Department" />
+          <EntitySet Name="EventWiseResults" EntityType="Self.EventWiseResult" />
+          <EntitySet Name="FirstPrizeTbls" EntityType="Self.FirstPrizeTbl" />
+          <EntitySet Name="GeneralSettings" EntityType="Self.GeneralSetting" />
+          <EntitySet Name="GroupHeadParticipations" EntityType="Self.GroupHeadParticipation" />
+          <EntitySet Name="GroupMemParticiapations" EntityType="Self.GroupMemParticiapation" />
+          <EntitySet Name="GrpEvents" EntityType="Self.GrpEvent" />
+          <EntitySet Name="ImageGalleries" EntityType="Self.ImageGallery" />
+          <EntitySet Name="IndivijualResults" EntityType="Self.IndivijualResult" />
+          <EntitySet Name="News" EntityType="Self.News" />
+          <EntitySet Name="ParticipantFeMaleResults" EntityType="Self.ParticipantFeMaleResult" />
+          <EntitySet Name="ParticipantMaleResults" EntityType="Self.ParticipantMaleResult" />
+          <EntitySet Name="PrgShedules" EntityType="Self.PrgShedule" />
+          <EntitySet Name="Results" EntityType="Self.Result" />
+          <EntitySet Name="Roles" EntityType="Self.Role" />
+          <EntitySet Name="SecondPrizeTbls" EntityType="Self.SecondPrizeTbl" />
+          <EntitySet Name="SingleEvents" EntityType="Self.SingleEvent" />
+          <EntitySet Name="SingleParticipations" EntityType="Self.SingleParticipation" />
+          <EntitySet Name="Students" EntityType="Self.Student" />
+          <EntitySet Name="StudentChestNoes" EntityType="Self.StudentChestNo" />
+          <EntitySet Name="SuperAdmins" EntityType="Self.SuperAdmin" />
+          <EntitySet Name="ThirdPrizeTbls" EntityType="Self.ThirdPrizeTbl" />
+          <EntitySet Name="Volunteers" EntityType="Self.Volunteer" />
+          <AssociationSet Name="FK_College_Volunteer" Association="Self.FK_College_Volunteer">
+            <End Role="Volunteer" EntitySet="Volunteers" />
+            <End Role="College" EntitySet="Colleges" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_College" Association="Self.FK_Student_College">
+            <End Role="College" EntitySet="Colleges" />
+            <End Role="Student" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CollegeResult_Volunteer" Association="Self.FK_CollegeResult_Volunteer">
+            <End Role="Volunteer" EntitySet="Volunteers" />
+            <End Role="CollegeResult" EntitySet="CollegeResults" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CollegeResult_Volunteer1" Association="Self.FK_CollegeResult_Volunteer1">
+            <End Role="Volunteer" EntitySet="Volunteers" />
+            <End Role="CollegeResult" EntitySet="CollegeResults" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Course_Department" Association="Self.FK_Course_Department">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="Course" EntitySet="Courses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_Course" Association="Self.FK_Student_Course">
+            <End Role="Course" EntitySet="Courses" />
+            <End Role="Student" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_Credential" Association="Self.FK_Student_Credential">
+            <End Role="Credential" EntitySet="Credentials" />
+            <End Role="Student" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Volunteer_Credential" Association="Self.FK_Volunteer_Credential">
+            <End Role="Credential" EntitySet="Credentials" />
+            <End Role="Volunteer" EntitySet="Volunteers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Student_Department" Association="Self.FK_Student_Department">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="Student" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventWiseResult_Volunteer" Association="Self.FK_EventWiseResult_Volunteer">
+            <End Role="Volunteer" EntitySet="Volunteers" />
+            <End Role="EventWiseResult" EntitySet="EventWiseResults" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventWiseResult_Volunteer1" Association="Self.FK_EventWiseResult_Volunteer1">
+            <End Role="Volunteer" EntitySet="Volunteers" />
+            <End Role="EventWiseResult" EntitySet="EventWiseResults" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FirstPrizeTbl_EventWiseResult" Association="Self.FK_FirstPrizeTbl_EventWiseResult">
+            <End Role="EventWiseResult" EntitySet="EventWiseResults" />
+            <End Role="FirstPrizeTbl" EntitySet="FirstPrizeTbls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SecondPrizeTbl_EventWiseResult" Association="Self.FK_SecondPrizeTbl_EventWiseResult">
+            <End Role="EventWiseResult" EntitySet="EventWiseResults" />
+            <End Role="SecondPrizeTbl" EntitySet="SecondPrizeTbls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ThirdPrizeTbl_EventWiseResult" Association="Self.FK_ThirdPrizeTbl_EventWiseResult">
+            <End Role="EventWiseResult" EntitySet="EventWiseResults" />
+            <End Role="ThirdPrizeTbl" EntitySet="ThirdPrizeTbls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FirstPrizeTbl_Volunteer" Association="Self.FK_FirstPrizeTbl_Volunteer">
+            <End Role="Volunteer" EntitySet="Volunteers" />
+            <End Role="FirstPrizeTbl" EntitySet="FirstPrizeTbls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FirstPrizeTbl_Volunteer1" Association="Self.FK_FirstPrizeTbl_Volunteer1">
+            <End Role="Volunteer" EntitySet="Volunteers" />
+            <End Role="FirstPrizeTbl" EntitySet="FirstPrizeTbls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GroupHeadPart_GrpEvent" Association="Self.FK_GroupHeadPart_GrpEvent">
+            <End Role="GrpEvent" EntitySet="GrpEvents" />
+            <End Role="GroupHeadParticipation" EntitySet="GroupHeadParticipations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GroupHeadPart_Student" Association="Self.FK_GroupHeadPart_Student">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="GroupHeadParticipation" EntitySet="GroupHeadParticipations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GroupMemParticiapation_GrpEvent" Association="Self.FK_GroupMemParticiapation_GrpEvent">
+            <End Role="GroupHeadParticipation" EntitySet="GroupHeadParticipations" />
+            <End Role="GroupMemParticiapation" EntitySet="GroupMemParticiapations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GroupMemParticiapation_Student" Association="Self.FK_GroupMemParticiapation_Student">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="GroupMemParticiapation" EntitySet="GroupMemParticiapations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GrpEvent_Volunteer" Association="Self.FK_GrpEvent_Volunteer">
+            <End Role="Volunteer" EntitySet="Volunteers" />
+            <End Role="GrpEvent" EntitySet="GrpEvents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ImageGallery_Volunteer" Association="Self.FK_ImageGallery_Volunteer">
+            <End Role="Volunteer" EntitySet="Volunteers" />
+            <End Role="ImageGallery" EntitySet="ImageGalleries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IndivijualResult_Volunteer" Association="Self.FK_IndivijualResult_Volunteer">
+            <End Role="Volunteer" EntitySet="Volunteers" />
+            <End Role="IndivijualResult" EntitySet="IndivijualResults" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IndivijualResult_Volunteer1" Association="Self.FK_IndivijualResult_Volunteer1">
+            <End Role="Volunteer" EntitySet="Volunteers" />
+            <End Role="IndivijualResult" EntitySet="IndivijualResults" />
+          </AssociationSet>
+          <AssociationSet Name="FK_News_Volunteer" Association="Self.FK_News_Volunteer">
+            <End Role="Volunteer" EntitySet="Volunteers" />
+            <End Role="News" EntitySet="News" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PrgShedule_Volunteer" Association="Self.FK_PrgShedule_Volunteer">
+            <End Role="Volunteer" EntitySet="Volunteers" />
+            <End Role="PrgShedule" EntitySet="PrgShedules" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PrgShedule_Volunteer1" Association="Self.FK_PrgShedule_Volunteer1">
+            <End Role="Volunteer" EntitySet="Volunteers" />
+            <End Role="PrgShedule" EntitySet="PrgShedules" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Result_Item" Association="Self.FK_Result_Item">
+            <End Role="SingleEvent" EntitySet="SingleEvents" />
+            <End Role="Result" EntitySet="Results" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Result_StudentChestNo" Association="Self.FK_Result_StudentChestNo">
+            <End Role="StudentChestNo" EntitySet="StudentChestNoes" />
+            <End Role="Result" EntitySet="Results" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Result_Volunteer" Association="Self.FK_Result_Volunteer">
+            <End Role="Volunteer" EntitySet="Volunteers" />
+            <End Role="Result" EntitySet="Results" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Result_Volunteer1" Association="Self.FK_Result_Volunteer1">
+            <End Role="Volunteer" EntitySet="Volunteers" />
+            <End Role="Result" EntitySet="Results" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Volunteer_Role" Association="Self.FK_Volunteer_Role">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="Volunteer" EntitySet="Volunteers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SecondPrizeTbl_Volunteer" Association="Self.FK_SecondPrizeTbl_Volunteer">
+            <End Role="Volunteer" EntitySet="Volunteers" />
+            <End Role="SecondPrizeTbl" EntitySet="SecondPrizeTbls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SecondPrizeTbl_Volunteer1" Association="Self.FK_SecondPrizeTbl_Volunteer1">
+            <End Role="Volunteer" EntitySet="Volunteers" />
+            <End Role="SecondPrizeTbl" EntitySet="SecondPrizeTbls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentParticipation_Item" Association="Self.FK_StudentParticipation_Item">
+            <End Role="SingleEvent" EntitySet="SingleEvents" />
+            <End Role="SingleParticipation" EntitySet="SingleParticipations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentChestNo_StudentParticipation" Association="Self.FK_StudentChestNo_StudentParticipation">
+            <End Role="SingleParticipation" EntitySet="SingleParticipations" />
+            <End Role="StudentChestNo" EntitySet="StudentChestNoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentParticipation_Student" Association="Self.FK_StudentParticipation_Student">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="SingleParticipation" EntitySet="SingleParticipations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentChestNo_Volunteer" Association="Self.FK_StudentChestNo_Volunteer">
+            <End Role="Volunteer" EntitySet="Volunteers" />
+            <End Role="StudentChestNo" EntitySet="StudentChestNoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ThirdPrizeTbl_Volunteer" Association="Self.FK_ThirdPrizeTbl_Volunteer">
+            <End Role="Volunteer" EntitySet="Volunteers" />
+            <End Role="ThirdPrizeTbl" EntitySet="ThirdPrizeTbls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ThirdPrizeTbl_Volunteer1" Association="Self.FK_ThirdPrizeTbl_Volunteer1">
+            <End Role="Volunteer" EntitySet="Volunteers" />
+            <End Role="ThirdPrizeTbl" EntitySet="ThirdPrizeTbls" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="KeralaYouthFestivalModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="Colleges">
+            <EntityTypeMapping TypeName="KeralaYouthFestivalModel.College">
+              <MappingFragment StoreEntitySet="College">
+                <ScalarProperty Name="ColID" ColumnName="ColID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+                <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CollegeResults">
+            <EntityTypeMapping TypeName="KeralaYouthFestivalModel.CollegeResult">
+              <MappingFragment StoreEntitySet="CollegeResult">
+                <ScalarProperty Name="ColgID" ColumnName="ColgID" />
+                <ScalarProperty Name="CollegeName" ColumnName="CollegeName" />
+                <ScalarProperty Name="CollegePoint" ColumnName="CollegePoint" />
+                <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Courses">
+            <EntityTypeMapping TypeName="KeralaYouthFestivalModel.Course">
+              <MappingFragment StoreEntitySet="Course">
+                <ScalarProperty Name="CouID" ColumnName="CouID" />
+                <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+                <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Credentials">
+            <EntityTypeMapping TypeName="KeralaYouthFestivalModel.Credential">
+              <MappingFragment StoreEntitySet="Credential">
+                <ScalarProperty Name="CredID" ColumnName="CredID" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="IsEmailVerify" ColumnName="IsEmailVerify" />
+                <ScalarProperty Name="EmailVerificationCode" ColumnName="EmailVerificationCode" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="PasswordResetCode" ColumnName="PasswordResetCode" />
+                <ScalarProperty Name="LastLoginIP" ColumnName="LastLoginIP" />
+                <ScalarProperty Name="LastLoginOn" ColumnName="LastLoginOn" />
+                <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departments">
+            <EntityTypeMapping TypeName="KeralaYouthFestivalModel.Department">
+              <MappingFragment StoreEntitySet="Department">
+                <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+                <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EventWiseResults">
+            <EntityTypeMapping TypeName="KeralaYouthFestivalModel.EventWiseResult">
+              <MappingFragment StoreEntitySet="EventWiseResult">
+                <ScalarProperty Name="EvntID" ColumnName="EvntID" />
+                <ScalarProperty Name="EventName" ColumnName="EventName" />
+                <ScalarProperty Name="FStudChestNumber" ColumnName="FStudChestNumber" />
+                <ScalarProperty Name="FStudName" ColumnName="FStudName" />
+                <ScalarProperty Name="FStudCollege" ColumnName="FStudCollege" />
+                <ScalarProperty Name="SStudChestNumber" ColumnName="SStudChestNumber" />
+                <ScalarProperty Name="SStudName" ColumnName="SStudName" />
+                <ScalarProperty Name="SStudCollege" ColumnName="SStudCollege" />
+                <ScalarProperty Name="TStudChestNumber" ColumnName="TStudChestNumber" />
+                <ScalarProperty Name="TStudName" ColumnName="TStudName" />
+                <ScalarProperty Name="TStudCollege" ColumnName="TStudCollege" />
+                <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FirstPrizeTbls">
+            <EntityTypeMapping TypeName="KeralaYouthFestivalModel.FirstPrizeTbl">
+              <MappingFragment StoreEntitySet="FirstPrizeTbl">
+                <ScalarProperty Name="FIrstPrizeID" ColumnName="FIrstPrizeID" />
+                <ScalarProperty Name="EventID" ColumnName="EventID" />
+                <ScalarProperty Name="StudName" ColumnName="StudName" />
+                <ScalarProperty Name="StudCollege" ColumnName="StudCollege" />
+                <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+                <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GeneralSettings">
+            <EntityTypeMapping TypeName="KeralaYouthFestivalModel.GeneralSetting">
+              <MappingFragment StoreEntitySet="GeneralSetting">
+                <ScalarProperty Name="GenSetID" ColumnName="GenSetID" />
+                <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GroupHeadParticipations">
+            <EntityTypeMapping TypeName="KeralaYouthFestivalModel.GroupHeadParticipation">
+              <MappingFragment StoreEntitySet="GroupHeadParticipation">
+                <ScalarProperty Name="GrpPartID" ColumnName="GrpPartID" />
+                <ScalarProperty Name="TeamHeadID" ColumnName="TeamHeadID" />
+                <ScalarProperty Name="GrpEvtID" ColumnName="GrpEvtID" />
+                <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GroupMemParticiapations">
+            <EntityTypeMapping TypeName="KeralaYouthFestivalModel.GroupMemParticiapation">
+              <MappingFragment StoreEntitySet="GroupMemParticiapation">
+                <ScalarProperty Name="GrpMemPartID" ColumnName="GrpMemPartID" />
+                <ScalarProperty Name="GrpPartID" ColumnName="GrpPartID" />
+                <ScalarProperty Name="TeamMemID" ColumnName="TeamMemID" />
+                <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GrpEvents">
+            <EntityTypeMapping TypeName="KeralaYouthFestivalModel.GrpEvent">
+              <MappingFragment StoreEntitySet="GrpEvent">
+                <ScalarProperty Name="GrpEvtID" ColumnName="GrpEvtID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="GrpPartcCount" ColumnName="GrpPartcCount" />
+                <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+                <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ImageGalleries">
+            <EntityTypeMapping TypeName="KeralaYouthFestivalModel.ImageGallery">
+              <MappingFragment StoreEntitySet="ImageGallery">
+                <ScalarProperty Name="ImGaID" ColumnName="ImGaID" />
+                <ScalarProperty Name="ImgURL" ColumnName="ImgURL" />
+                <ScalarProperty Name="ImgAlt" ColumnName="ImgAlt" />
+                <ScalarProperty Name="UploadedBy" ColumnName="UploadedBy" />
+                <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IndivijualResults">
+            <EntityTypeMapping TypeName="KeralaYouthFestivalModel.IndivijualResult">
+              <MappingFragment StoreEntitySet="IndivijualResult">
+                <ScalarProperty Name="IndvID" ColumnName="IndvID" />
+                <ScalarProperty Name="StudName" ColumnName="StudName" />
+                <ScalarProperty Name="StudPoint" ColumnName="StudPoint" />
+                <ScalarProperty Name="StudCollege" ColumnName="StudCollege" />
+                <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="News">
+            <EntityTypeMapping TypeName="KeralaYouthFestivalModel.News">
+              <MappingFragment StoreEntitySet="News">
+                <ScalarProperty Name="NewsID" ColumnName="NewsID" />
+                <ScalarProperty Name="NewsTitle" ColumnName="NewsTitle" />
+                <ScalarProperty Name="NewsInfo" ColumnName="NewsInfo" />
+                <ScalarProperty Name="NewsLink" ColumnName="NewsLink" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ParticipantFeMaleResults">
+            <EntityTypeMapping TypeName="KeralaYouthFestivalModel.ParticipantFeMaleResult">
+              <MappingFragment StoreEntitySet="ParticipantFeMaleResult">
+                <ScalarProperty Name="PartFeMaleResultID" ColumnName="PartFeMaleResultID" />
+                <ScalarProperty Name="StudName" ColumnName="StudName" />
+                <ScalarProperty Name="CollegeName" ColumnName="CollegeName" />
+                <ScalarProperty Name="StudPoint" ColumnName="StudPoint" />
+                <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ParticipantMaleResults">
+            <EntityTypeMapping TypeName="KeralaYouthFestivalModel.ParticipantMaleResult">
+              <MappingFragment StoreEntitySet="ParticipantMaleResult">
+                <ScalarProperty Name="PartMaleResultID" ColumnName="PartMaleResultID" />
+                <ScalarProperty Name="StudName" ColumnName="StudName" />
+                <ScalarProperty Name="CollegeName" ColumnName="CollegeName" />
+                <ScalarProperty Name="StudPoint" ColumnName="StudPoint" />
+                <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PrgShedules">
+            <EntityTypeMapping TypeName="KeralaYouthFestivalModel.PrgShedule">
+              <MappingFragment StoreEntitySet="PrgShedule">
+                <ScalarProperty Name="SheduleID" ColumnName="SheduleID" />
+                <ScalarProperty Name="EventName" ColumnName="EventName" />
+                <ScalarProperty Name="EventCode" ColumnName="EventCode" />
+                <ScalarProperty Name="SheduleDate" ColumnName="SheduleDate" />
+                <ScalarProperty Name="StartingTime" ColumnName="StartingTime" />
+                <ScalarProperty Name="EndingTime" ColumnName="EndingTime" />
+                <ScalarProperty Name="Stage" ColumnName="Stage" />
+                <ScalarProperty Name="CollegeName" ColumnName="CollegeName" />
+                <ScalarProperty Name="CoOrdinatorName" ColumnName="CoOrdinatorName" />
+                <ScalarProperty Name="CoOrdinatorNumber" ColumnName="CoOrdinatorNumber" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+                <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Results">
+            <EntityTypeMapping TypeName="KeralaYouthFestivalModel.Result">
+              <MappingFragment StoreEntitySet="Result">
+                <ScalarProperty Name="ResID" ColumnName="ResID" />
+                <ScalarProperty Name="StudChestID" ColumnName="StudChestID" />
+                <ScalarProperty Name="ItmID" ColumnName="ItmID" />
+                <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+                <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="KeralaYouthFestivalModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SecondPrizeTbls">
+            <EntityTypeMapping TypeName="KeralaYouthFestivalModel.SecondPrizeTbl">
+              <MappingFragment StoreEntitySet="SecondPrizeTbl">
+                <ScalarProperty Name="SecondPrizeID" ColumnName="SecondPrizeID" />
+                <ScalarProperty Name="EventID" ColumnName="EventID" />
+                <ScalarProperty Name="StudName" ColumnName="StudName" />
+                <ScalarProperty Name="StudCollege" ColumnName="StudCollege" />
+                <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+                <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SingleEvents">
+            <EntityTypeMapping TypeName="KeralaYouthFestivalModel.SingleEvent">
+              <MappingFragment StoreEntitySet="SingleEvent">
+                <ScalarProperty Name="SinEvtID" ColumnName="SinEvtID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+                <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SingleParticipations">
+            <EntityTypeMapping TypeName="KeralaYouthFestivalModel.SingleParticipation">
+              <MappingFragment StoreEntitySet="SingleParticipation">
+                <ScalarProperty Name="StudPartID" ColumnName="StudPartID" />
+                <ScalarProperty Name="StudID" ColumnName="StudID" />
+                <ScalarProperty Name="SinEvtID" ColumnName="SinEvtID" />
+                <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Students">
+            <EntityTypeMapping TypeName="KeralaYouthFestivalModel.Student">
+              <MappingFragment StoreEntitySet="Student">
+                <ScalarProperty Name="StudID" ColumnName="StudID" />
+                <ScalarProperty Name="CredID" ColumnName="CredID" />
+                <ScalarProperty Name="RegID" ColumnName="RegID" />
+                <ScalarProperty Name="FName" ColumnName="FName" />
+                <ScalarProperty Name="SName" ColumnName="SName" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="ClgAdmistnNo" ColumnName="ClgAdmistnNo" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="ProPic" ColumnName="ProPic" />
+                <ScalarProperty Name="ColID" ColumnName="ColID" />
+                <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+                <ScalarProperty Name="CouID" ColumnName="CouID" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="IsPhoneVerify" ColumnName="IsPhoneVerify" />
+                <ScalarProperty Name="PhoneVerificationCode" ColumnName="PhoneVerificationCode" />
+                <ScalarProperty Name="IsCollegeApproved" ColumnName="IsCollegeApproved" />
+                <ScalarProperty Name="IsEligibilityApproved" ColumnName="IsEligibilityApproved" />
+                <ScalarProperty Name="IsChestNoProvided" ColumnName="IsChestNoProvided" />
+                <ScalarProperty Name="CollegeApprovedBy" ColumnName="CollegeApprovedBy" />
+                <ScalarProperty Name="EligibilityApprovedBy" ColumnName="EligibilityApprovedBy" />
+                <ScalarProperty Name="ChestNoProvidedBy" ColumnName="ChestNoProvidedBy" />
+                <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudentChestNoes">
+            <EntityTypeMapping TypeName="KeralaYouthFestivalModel.StudentChestNo">
+              <MappingFragment StoreEntitySet="StudentChestNo">
+                <ScalarProperty Name="StudChestID" ColumnName="StudChestID" />
+                <ScalarProperty Name="StudPartID" ColumnName="StudPartID" />
+                <ScalarProperty Name="ChestNo" ColumnName="ChestNo" />
+                <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+                <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SuperAdmins">
+            <EntityTypeMapping TypeName="KeralaYouthFestivalModel.SuperAdmin">
+              <MappingFragment StoreEntitySet="SuperAdmin">
+                <ScalarProperty Name="SuAdID" ColumnName="SuAdID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ThirdPrizeTbls">
+            <EntityTypeMapping TypeName="KeralaYouthFestivalModel.ThirdPrizeTbl">
+              <MappingFragment StoreEntitySet="ThirdPrizeTbl">
+                <ScalarProperty Name="ThirdPrizeID" ColumnName="ThirdPrizeID" />
+                <ScalarProperty Name="EventID" ColumnName="EventID" />
+                <ScalarProperty Name="StudName" ColumnName="StudName" />
+                <ScalarProperty Name="StudCollege" ColumnName="StudCollege" />
+                <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+                <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Volunteers">
+            <EntityTypeMapping TypeName="KeralaYouthFestivalModel.Volunteer">
+              <MappingFragment StoreEntitySet="Volunteer">
+                <ScalarProperty Name="VolID" ColumnName="VolID" />
+                <ScalarProperty Name="CredID" ColumnName="CredID" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Place" ColumnName="Place" />
+                <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

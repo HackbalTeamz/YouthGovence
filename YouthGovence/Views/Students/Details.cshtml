@@ -1,0 +1,195 @@
+﻿@model YouthGovence.Models.Student
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_SuperAdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Student</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RegID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClgAdmistnNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClgAdmistnNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfBirth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProPic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProPic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsPhoneVerify)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsPhoneVerify)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneVerificationCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneVerificationCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsCollegeApproved)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsCollegeApproved)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsEligibilityApproved)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsEligibilityApproved)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsChestNoProvided)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsChestNoProvided)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CollegeApprovedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CollegeApprovedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EligibilityApprovedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EligibilityApprovedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChestNoProvidedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChestNoProvidedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnteredOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnteredOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Course.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Course.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Credential.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Credential.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Department.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.College.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.College.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.StudID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

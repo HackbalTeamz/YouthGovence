@@ -3,10 +3,10 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
-using YouthFestival.Models;
-using YouthFestival.App_Code;
+using YouthGovence.AppCode;
+using YouthGovence.Models;
 
-namespace YouthFestival.Controllers
+namespace YouthGovence.Controllers
 {
     [Authorized(Roles = Constants.SuperAdmin)]
     public class CollegesController : BaseController

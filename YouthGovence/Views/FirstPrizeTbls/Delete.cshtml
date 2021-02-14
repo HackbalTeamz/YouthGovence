@@ -1,0 +1,81 @@
+﻿@model YouthGovence.Models.FirstPrizeTbl
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_VolunteerLayout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>FirstPrizeTbl</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StudName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudCollege)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudCollege)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnteredOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnteredOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Volunteer.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Volunteer.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Volunteer1.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Volunteer1.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EventWiseResult.EventName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventWiseResult.EventName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
