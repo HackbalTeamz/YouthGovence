@@ -49,6 +49,13 @@
                         <h5 class="h4 text-gray-900 mb-4">@ViewBag.Error</h5>
                     }
                 </span>
+                <div class="text-center w-full p-t-2 p-b-20 ">
+                    <a class="txt1" href="~/Home/index">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                        Home
+
+                    </a>
+                </div>
                 @using (Html.BeginForm("Login", "Accounts", FormMethod.Post, new { @class = "login100-form validate-form" }))
                 {
                     @Html.AntiForgeryToken()
