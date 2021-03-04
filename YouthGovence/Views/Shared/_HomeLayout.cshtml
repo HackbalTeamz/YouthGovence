@@ -23,7 +23,11 @@
     <link href="~/Content/Home/owl.carousel.min.css" rel="stylesheet" />
     <link href="~/Content/Home/magnific-popup.css" rel="stylesheet" />
     <link href="~/Content/Home/slicknav.min.css" rel="stylesheet" />
-    <link href="~/Content/Home/style.css" rel="stylesheet" /> 
+    <link href="~/Content/Home/style.css" rel="stylesheet" />
+    @if (IsSectionDefined("Styles"))
+    {
+        @RenderSection("Styles", required: false)
+    }
 </head>
 <body>
 
