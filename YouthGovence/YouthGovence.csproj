@@ -110,6 +110,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Template\RegistrationEmail.txt" />
     <Content Include="Content\Admin\all.css" />
     <Content Include="Content\Admin\all.min.css" />
     <Content Include="Content\Admin\dataTables.bootstrap4.css" />
@@ -399,6 +400,7 @@
     <Compile Include="AppCode\Authorized.cs" />
     <Compile Include="AppCode\Constants.cs" />
     <Compile Include="AppCode\GlobalVariable.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutUsController.cs" />
     <Compile Include="Controllers\AccountsController.cs" />
@@ -721,9 +723,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
