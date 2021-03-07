@@ -194,9 +194,13 @@
     <Content Include="Images\gallery\gallery-7.jpg" />
     <Content Include="Images\gallery\gallery-8.jpg" />
     <Content Include="Images\gallery\gallery-9.jpg" />
+    <Content Include="Images\hero-slider\hero-.jpg" />
     <Content Include="Images\hero-slider\hero-1.jpg" />
     <Content Include="Images\hero-slider\hero-2.jpg" />
     <Content Include="Images\hero-slider\hero-3.jpg" />
+    <Content Include="Images\hero-slider\hero-4.jpg" />
+    <Content Include="Images\hero-slider\hero-5.jpg" />
+    <Content Include="Images\home-about-1.jpeg" />
     <Content Include="Images\home-about.jpg" />
     <Content Include="Images\icons\chose-icon-1.png" />
     <Content Include="Images\icons\chose-icon-2.png" />
