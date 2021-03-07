@@ -1609,7 +1609,7 @@ ol, ul {
             position: absolute;
             right: -13px;
             top: -2px;
-            content: "ï„…";
+            content: "";
             font-family: FontAwesome;
             font-size: 16px;
             color: #fff
