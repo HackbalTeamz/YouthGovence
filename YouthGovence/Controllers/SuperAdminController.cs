@@ -22,6 +22,7 @@ namespace YouthGovence.Controllers
             if(superadobj != null)
             {
                 FormsAuthentication.SetAuthCookie(Convert.ToString(superadobj.SuAdID + "|0|0"), false);
+                Session["Role"] = "0";
                 return RedirectToAction("Dashboard");
             }
             return View();
