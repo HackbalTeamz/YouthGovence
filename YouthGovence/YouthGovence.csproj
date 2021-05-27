@@ -764,6 +764,8 @@
     <Content Include="Views\Volunteers\Index.cshtml" />
     <Content Include="Views\Shared\_VolunteerLayout.cshtml" />
     <Content Include="Views\Shared\_VolunteerNavigationLink.cshtml" />
+    <Content Include="Views\Shared\_SuperAdminLayout.cshtml" />
+    <Content Include="Views\Shared\_SuperAdminNavigationLink.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
