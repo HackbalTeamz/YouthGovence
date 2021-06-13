@@ -39,11 +39,11 @@ namespace YouthGovence
                 {
                     smtpClient.UseDefaultCredentials = false;
                     smtpClient.Host = "mail.hackbal.com";
-                    smtpClient.Port = 587;
+                    smtpClient.Port = 25;
                     smtpClient.EnableSsl = false;
                     smtpClient.Credentials = false ?
                         CredentialCache.DefaultNetworkCredentials :
-                        new NetworkCredential("contact@hackbal.com", "Hello@123");
+                        new NetworkCredential("project@hackbal.com", "Test@123");
                     smtpClient.Send(message);
                 }
 
