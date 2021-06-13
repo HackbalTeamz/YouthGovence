@@ -28,6 +28,24 @@ namespace YouthGovence
         {
             try
             {
+                //var message = new MailMessage();
+                //message.To.Add(new MailAddress(ToMail));
+                //message.From = new MailAddress(Email);
+                //message.Bcc.Add("abdullasirajudeen@gmail.com");
+                //message.Subject = Subject;
+                //message.Body = Body;
+                //message.IsBodyHtml = true;
+                //using (var smtpClient = new SmtpClient())
+                //{
+                //    smtpClient.UseDefaultCredentials = false;
+                //    smtpClient.Host = "mail.hackbal.com";
+                //    smtpClient.Port = 465;
+                //    smtpClient.EnableSsl = true;
+                //    smtpClient.Credentials = false ?
+                //        CredentialCache.DefaultNetworkCredentials :
+                //        new NetworkCredential("project@hackbal.com", "Test@123");
+                //    smtpClient.Send(message);
+                //}
                 var message = new MailMessage();
                 message.To.Add(new MailAddress(ToMail));
                 message.From = new MailAddress(Email);
@@ -38,12 +56,12 @@ namespace YouthGovence
                 using (var smtpClient = new SmtpClient())
                 {
                     smtpClient.UseDefaultCredentials = false;
-                    smtpClient.Host = "mail.hackbal.com";
-                    smtpClient.Port = 25;
-                    smtpClient.EnableSsl = false;
+                    smtpClient.Host = "smtp.gmail.com";
+                    smtpClient.Port = 587;
+                    smtpClient.EnableSsl = true;
                     smtpClient.Credentials = false ?
                         CredentialCache.DefaultNetworkCredentials :
-                        new NetworkCredential("project@hackbal.com", "Test@123");
+                        new NetworkCredential("kinghusachu@gmail.com", "kinghuz@123");
                     smtpClient.Send(message);
                 }
 
